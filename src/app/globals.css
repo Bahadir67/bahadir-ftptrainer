@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 249, 250, 251;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Phase colors */
+.phase-base {
+  @apply bg-blue-500;
+}
+
+.phase-build {
+  @apply bg-orange-500;
+}
+
+.phase-peak {
+  @apply bg-red-500;
+}
+
+/* Animations */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Today highlight */
+.today-highlight {
+  @apply ring-2 ring-blue-500 ring-offset-2;
+}
+
+/* Completed workout */
+.completed {
+  @apply opacity-75;
+}
+
+.completed::after {
+  content: '✓';
+  @apply absolute top-1 right-1 text-green-600 font-bold;
+}
