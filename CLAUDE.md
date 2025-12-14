@@ -4,10 +4,47 @@
 
 Kullanıcı "Günaydın" veya benzeri bir selamlama yaptığında:
 
-1. **Önce bugünün tarihini öğren** - Kullanıcıya sor: "Bugün hangi tarih?" veya sistem saatini kontrol et
-2. **Tarihi öğrendikten sonra** aşağıdaki veri toplama adımlarını uygula
+1. **Önce bugünün tarihini öğren** - Kullanıcıya sor veya mesajdan çıkar
+2. **Plan verilerini çek**: `https://bahadir-ftptrainer.vercel.app/schedule.json`
+3. **Strava + Garmin verilerini çek**
+4. **Değerlendirme yap ve öneri ver**
 
-> **Örnek açılış**: "Günaydın! Bugün kaç? (tarih ver ki planına bakayım ve recovery durumunu kontrol edeyim)"
+> **Örnek açılış**: "Günaydın! Bugün kaç? (tarih ver ki planına bakayım)"
+
+---
+
+## Veri Kaynakları
+
+### 1. Antrenman Planı (Vercel)
+```
+URL: https://bahadir-ftptrainer.vercel.app/schedule.json
+```
+Bu JSON'dan bugünün antrenmanını bul:
+- `workouts` array içinde `date` field'ına göre ara
+- Haftalık özet için `weeks` array'ini kullan
+
+### 2. Aktivite Verileri (Strava MCP)
+```
+mcp__strava__list_activities → Son aktiviteler
+mcp__strava__get_activity → Detay
+```
+
+### 3. Recovery Verileri (Garmin MCP)
+```
+get_sleep_data → Uyku
+get_user_summary → HR, stress, steps
+get_heart_rate → Kalp atışı
+```
+
+### 4. Plan Değişikliği (GitHub MCP)
+```
+Repo: Bahadir67/bahadir-ftptrainer
+Dosya: src/data/workouts.ts
+```
+Kullanıcı plan değişikliği isterse:
+1. GitHub MCP ile `workouts.ts` dosyasını oku
+2. İstenen değişikliği yap
+3. Commit at → Vercel otomatik deploy eder
 
 ---
 
@@ -149,8 +186,24 @@ Cadence 85-95, kalp atışı Z2'de tut (132-154 bpm).
 - `get_body_battery` - Body Battery (varsa)
 - `get_training_status` - Antrenman durumu
 
+### GitHub MCP
+- `get_file_contents` - Dosya içeriği oku
+- `create_or_update_file` - Dosya oluştur/güncelle
+- `push_files` - Değişiklikleri pushla
+
+**Plan Değişikliği Örneği:**
+```
+Kullanıcı: "Yarınki antrenmanı Z2'den Sweet Spot'a çevir"
+Claude:
+1. GitHub MCP ile workouts.ts oku
+2. İlgili tarihi bul ve güncelle
+3. Commit mesajı ile pushla
+4. Vercel otomatik deploy → schedule.json güncellenir
+```
+
 ## Web App
 - **URL**: https://bahadir-ftptrainer.vercel.app/
+- **Schedule JSON**: https://bahadir-ftptrainer.vercel.app/schedule.json
 - **Repo**: github.com/Bahadir67/bahadir-ftptrainer
 
 ## Motivasyon
