@@ -1,5 +1,16 @@
 # FTP Trainer - Claude Bağlam Dosyası
 
+## ÖNEMLİ: Günlük Konuşma Başlangıcı
+
+Kullanıcı "Günaydın" veya benzeri bir selamlama yaptığında:
+
+1. **Önce bugünün tarihini öğren** - Kullanıcıya sor: "Bugün hangi tarih?" veya sistem saatini kontrol et
+2. **Tarihi öğrendikten sonra** aşağıdaki veri toplama adımlarını uygula
+
+> **Örnek açılış**: "Günaydın! Bugün kaç? (tarih ver ki planına bakayım ve recovery durumunu kontrol edeyim)"
+
+---
+
 ## Sporcu Profili
 - **İsim**: Eylül
 - **Başlangıç FTP**: 220W
