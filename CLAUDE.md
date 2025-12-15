@@ -112,16 +112,19 @@ Recovery durumun iyi, bugünkü [antrenman] için hazırsın.
 
 Kullanıcı değişikliği onaylarsa:
 
-1. **GitHub MCP** ile `src/data/workouts.ts` dosyasını oku
-2. İlgili tarihteki antrenmanı güncelle
-3. Commit mesajı ile pushla:
-   ```
-   Update workout for [tarih]: [eski] → [yeni]
+1. **Read tool** ile `C:\projects1\FTPTrainer\src\data\workouts.ts` dosyasını oku
+2. **Edit tool** ile ilgili tarihteki antrenmanı güncelle
+3. **Bash tool** ile Git komutları çalıştır:
+   ```bash
+   cd /c/projects1/FTPTrainer && \
+   git add src/data/workouts.ts && \
+   git commit -m "Update workout for [tarih]: [eski] → [yeni]
 
-   Reason: [recovery durumu / kullanıcı talebi / etc]
+   Reason: [recovery durumu / kullanıcı talebi / etc]" && \
+   git push
    ```
-4. Vercel otomatik build → schedule.json güncellenir
-5. Kullanıcıya yeni antrenman detaylarını ver
+4. Vercel otomatik build tetiklenir → schedule.json güncellenir (30-60 saniye)
+5. Kullanıcıya yeni antrenman detaylarını ver ve Vercel URL'yi paylaş
 
 ---
 
@@ -190,15 +193,16 @@ get_stress_data - Stres seviyesi
 get_body_battery - Enerji seviyesi
 ```
 
-### GitHub (Plan Değişikliği)
+### Built-in Tools (Plan Değişikliği)
 ```
-get_file_contents - workouts.ts oku
-create_or_update_file - Değişiklik yap
-push_files - Commit ve push
+Read - workouts.ts dosyasını oku
+Edit - Dosyada değişiklik yap
+Bash - Git komutları çalıştır (git add, commit, push)
 ```
 
 **Repo:** `Bahadir67/bahadir-ftptrainer`
-**Dosya:** `src/data/workouts.ts`
+**Dosya:** `C:\projects1\FTPTrainer\src\data\workouts.ts`
+**Git Auth:** GitHub CLI (gh) zaten yapılandırılmış ✅
 
 ---
 
