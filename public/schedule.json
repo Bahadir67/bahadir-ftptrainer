@@ -3,7 +3,7 @@
   "ftp_target": 250,
   "plan_start": "2025-12-13",
   "plan_end": "2026-03-07",
-  "generated_at": "2025-12-14T06:34:00.734Z",
+  "generated_at": "2025-12-17T13:13:12.279Z",
   "weeks": [
     {
       "week": 1,
@@ -45,7 +45,7 @@
       "endDate": "2026-01-09",
       "targetTSS": 280,
       "targetHours": 4.5,
-      "strengthSessions": 1,
+      "strengthSessions": 2,
       "isRecoveryWeek": true,
       "focus": "RECOVERY WEEK - Toparlanma"
     },
@@ -67,7 +67,7 @@
       "endDate": "2026-01-23",
       "targetTSS": 450,
       "targetHours": 7.5,
-      "strengthSessions": 1,
+      "strengthSessions": 2,
       "isRecoveryWeek": false,
       "focus": "VO2max intervallar"
     },
@@ -78,7 +78,7 @@
       "endDate": "2026-01-30",
       "targetTSS": 480,
       "targetHours": 8,
-      "strengthSessions": 1,
+      "strengthSessions": 2,
       "isRecoveryWeek": false,
       "focus": "Yoğun threshold blokları"
     },
@@ -89,7 +89,7 @@
       "endDate": "2026-02-06",
       "targetTSS": 320,
       "targetHours": 5,
-      "strengthSessions": 1,
+      "strengthSessions": 2,
       "isRecoveryWeek": true,
       "focus": "RECOVERY WEEK - FTP Test"
     },
@@ -100,7 +100,7 @@
       "endDate": "2026-02-13",
       "targetTSS": 480,
       "targetHours": 8.5,
-      "strengthSessions": 1,
+      "strengthSessions": 2,
       "isRecoveryWeek": false,
       "focus": "Peak phase başlangıcı"
     },
@@ -111,7 +111,7 @@
       "endDate": "2026-02-20",
       "targetTSS": 520,
       "targetHours": 9,
-      "strengthSessions": 1,
+      "strengthSessions": 2,
       "isRecoveryWeek": false,
       "focus": "Maksimum yüklenme"
     },
@@ -122,7 +122,7 @@
       "endDate": "2026-02-27",
       "targetTSS": 500,
       "targetHours": 8.5,
-      "strengthSessions": 0,
+      "strengthSessions": 2,
       "isRecoveryWeek": false,
       "focus": "Son yüklenme haftası"
     },
@@ -133,7 +133,7 @@
       "endDate": "2026-03-06",
       "targetTSS": 350,
       "targetHours": 6,
-      "strengthSessions": 0,
+      "strengthSessions": 2,
       "isRecoveryWeek": true,
       "focus": "TAPER + Final FTP Test"
     }
@@ -142,26 +142,6 @@
     {
       "date": "2025-12-13",
       "dayOfWeek": "Cumartesi",
-      "type": "z2_endurance",
-      "title": "Z2 Endurance Ride",
-      "duration": 60,
-      "tss": 45,
-      "description": "Hafif tempolu aerobik sürüş. Yeni plana adaptasyon.",
-      "week": 1,
-      "phase": "base",
-      "isRecoveryWeek": false,
-      "myWhooshWorkout": "Zone 2 Endurance 60min",
-      "detail": {
-        "warmup": "10dk kolay spin, %50-55 FTP",
-        "main": "40dk sabit tempo @%60-70 FTP (132-154W)",
-        "cooldown": "10dk çok hafif spin",
-        "cadence": "85-95 rpm",
-        "heartRate": "%65-75 max HR"
-      }
-    },
-    {
-      "date": "2025-12-14",
-      "dayOfWeek": "Pazar",
       "type": "z2_endurance",
       "title": "Uzun Z2 Ride",
       "duration": 90,
@@ -179,50 +159,36 @@
       }
     },
     {
+      "date": "2025-12-14",
+      "dayOfWeek": "Pazar",
+      "type": "recovery",
+      "title": "Opsiyonel Recovery (Akşam)",
+      "duration": 45,
+      "tss": 25,
+      "description": "Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).",
+      "week": 1,
+      "phase": "base",
+      "isRecoveryWeek": false,
+      "myWhooshWorkout": null,
+      "detail": {
+        "warmup": "Yok",
+        "main": "45dk çok hafif @%50-60 FTP",
+        "cooldown": "Yok"
+      }
+    },
+    {
       "date": "2025-12-15",
       "dayOfWeek": "Pazartesi",
       "type": "strength_a",
       "title": "Ağırlık A - Temel Güç",
-      "duration": 45,
+      "duration": 60,
       "tss": null,
       "description": "Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.",
       "week": 1,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null,
-      "strengthExercises": [
-        {
-          "notes": "RPE 7-8 (ağır, kontrollü)",
-          "sets": "4x4-6",
-          "name": "Back Squat"
-        },
-        {
-          "notes": "RPE 7-8 (hamstring/hip hinge)",
-          "sets": "3x6-8",
-          "name": "Romanian Deadlift"
-        },
-        {
-          "notes": "RPE 7 (stabil, kontrollü)",
-          "sets": "2-3x6-8/bacak",
-          "name": "Bulgarian Split Squat"
-        },
-        {
-          "notes": "Soleus odaklı (diz bükülü)",
-          "sets": "4x8-12",
-          "name": "Seated Calf Raise"
-        },
-        {
-          "notes": "Anti-rotation, kontrollü",
-          "sets": "3x10-12/taraf",
-          "name": "Pallof Press"
-        },
-        {
-          "notes": "Anti-extension, form bozulmadan",
-          "sets": "3x6-10",
-          "name": "Ab Wheel"
-        }
-      ]
+      "detail": null
     },
     {
       "date": "2025-12-16",
@@ -266,61 +232,14 @@
       "dayOfWeek": "Perşembe",
       "type": "strength_b",
       "title": "Ağırlık B - Fonksiyonel Güç",
-      "duration": 40,
+      "duration": 60,
       "tss": null,
       "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.",
       "week": 1,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null,
-      "strengthExercises": [
-        {
-          "notes": "RPE 7-8 (glute dominant)",
-          "sets": "4x6-10",
-          "name": "Hip Thrust"
-        },
-        {
-          "notes": "RPE 7 (denge + posterior chain)",
-          "sets": "3x8/bacak",
-          "name": "Single Leg Deadlift"
-        },
-        {
-          "notes": "RPE 6-7 (Cuma kalitesini bozmasın)",
-          "sets": "2x8-10/bacak",
-          "name": "Step Ups"
-        },
-        {
-          "notes": "Geniş çekiş, 1 sn sık",
-          "sets": "3x8-12",
-          "name": "Wide Row Machine"
-        },
-        {
-          "notes": "Strict, RPE 6-7 (failure yok)",
-          "sets": "3x5-8",
-          "name": "Barbell Overhead Press"
-        },
-        {
-          "notes": "RPE 6-7 (failure yok)",
-          "sets": "2x8-12",
-          "name": "Chest Press"
-        },
-        {
-          "notes": "Skapula + arka omuz",
-          "sets": "2x12-15",
-          "name": "Face Pull"
-        },
-        {
-          "notes": "Adductor + lateral core",
-          "sets": "3x20-40 sn/taraf",
-          "name": "Copenhagen Plank"
-        },
-        {
-          "notes": "Gastrocnemius (diz düz)",
-          "sets": "3x10-15",
-          "name": "Standing Calf Raise"
-        }
-      ]
+      "detail": null
     },
     {
       "date": "2025-12-19",
@@ -383,46 +302,14 @@
       "dayOfWeek": "Pazartesi",
       "type": "strength_a",
       "title": "Ağırlık A",
-      "duration": 45,
+      "duration": 60,
       "tss": null,
       "description": "Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.",
       "week": 2,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null,
-      "strengthExercises": [
-        {
-          "notes": "RPE 7-8 (ağır, kontrollü)",
-          "sets": "4x4-6",
-          "name": "Back Squat"
-        },
-        {
-          "notes": "RPE 7-8 (hamstring/hip hinge)",
-          "sets": "3x6-8",
-          "name": "Romanian Deadlift"
-        },
-        {
-          "notes": "RPE 7 (stabil, kontrollü)",
-          "sets": "2-3x6-8/bacak",
-          "name": "Bulgarian Split Squat"
-        },
-        {
-          "notes": "Soleus odaklı (diz bükülü)",
-          "sets": "4x8-12",
-          "name": "Seated Calf Raise"
-        },
-        {
-          "notes": "Anti-rotation, kontrollü",
-          "sets": "3x10-12/taraf",
-          "name": "Pallof Press"
-        },
-        {
-          "notes": "Anti-extension, form bozulmadan",
-          "sets": "3x6-10",
-          "name": "Ab Wheel"
-        }
-      ]
+      "detail": null
     },
     {
       "date": "2025-12-23",
@@ -465,61 +352,14 @@
       "dayOfWeek": "Perşembe",
       "type": "strength_b",
       "title": "Ağırlık B",
-      "duration": 40,
+      "duration": 60,
       "tss": null,
       "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.",
       "week": 2,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null,
-      "strengthExercises": [
-        {
-          "notes": "RPE 7-8 (glute dominant)",
-          "sets": "4x6-10",
-          "name": "Hip Thrust"
-        },
-        {
-          "notes": "RPE 7 (denge + posterior chain)",
-          "sets": "3x8/bacak",
-          "name": "Single Leg Deadlift"
-        },
-        {
-          "notes": "RPE 6-7 (Cuma kalitesini bozmasın)",
-          "sets": "2x8-10/bacak",
-          "name": "Step Ups"
-        },
-        {
-          "notes": "Geniş çekiş, 1 sn sık",
-          "sets": "3x8-12",
-          "name": "Wide Row Machine"
-        },
-        {
-          "notes": "Strict, RPE 6-7 (failure yok)",
-          "sets": "3x5-8",
-          "name": "Barbell Overhead Press"
-        },
-        {
-          "notes": "RPE 6-7 (failure yok)",
-          "sets": "2x8-12",
-          "name": "Chest Press"
-        },
-        {
-          "notes": "Skapula + arka omuz",
-          "sets": "2x12-15",
-          "name": "Face Pull"
-        },
-        {
-          "notes": "Adductor + lateral core",
-          "sets": "3x20-40 sn/taraf",
-          "name": "Copenhagen Plank"
-        },
-        {
-          "notes": "Gastrocnemius (diz düz)",
-          "sets": "3x10-15",
-          "name": "Standing Calf Raise"
-        }
-      ]
+      "detail": null
     },
     {
       "date": "2025-12-26",
@@ -576,46 +416,14 @@
       "dayOfWeek": "Pazartesi",
       "type": "strength_a",
       "title": "Ağırlık A",
-      "duration": 45,
+      "duration": 60,
       "tss": null,
       "description": "Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.",
       "week": 3,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null,
-      "strengthExercises": [
-        {
-          "notes": "RPE 7-8 (ağır, kontrollü)",
-          "sets": "4x4-6",
-          "name": "Back Squat"
-        },
-        {
-          "notes": "RPE 7-8 (hamstring/hip hinge)",
-          "sets": "3x6-8",
-          "name": "Romanian Deadlift"
-        },
-        {
-          "notes": "RPE 7 (stabil, kontrollü)",
-          "sets": "2-3x6-8/bacak",
-          "name": "Bulgarian Split Squat"
-        },
-        {
-          "notes": "Soleus odaklı (diz bükülü)",
-          "sets": "4x8-12",
-          "name": "Seated Calf Raise"
-        },
-        {
-          "notes": "Anti-rotation, kontrollü",
-          "sets": "3x10-12/taraf",
-          "name": "Pallof Press"
-        },
-        {
-          "notes": "Anti-extension, form bozulmadan",
-          "sets": "3x6-10",
-          "name": "Ab Wheel"
-        }
-      ]
+      "detail": null
     },
     {
       "date": "2025-12-30",
@@ -672,61 +480,14 @@
       "dayOfWeek": "Cuma",
       "type": "strength_b",
       "title": "Ağırlık B",
-      "duration": 40,
+      "duration": 60,
       "tss": null,
       "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.",
       "week": 3,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null,
-      "strengthExercises": [
-        {
-          "notes": "RPE 7-8 (glute dominant)",
-          "sets": "4x6-10",
-          "name": "Hip Thrust"
-        },
-        {
-          "notes": "RPE 7 (denge + posterior chain)",
-          "sets": "3x8/bacak",
-          "name": "Single Leg Deadlift"
-        },
-        {
-          "notes": "RPE 6-7 (Cuma kalitesini bozmasın)",
-          "sets": "2x8-10/bacak",
-          "name": "Step Ups"
-        },
-        {
-          "notes": "Geniş çekiş, 1 sn sık",
-          "sets": "3x8-12",
-          "name": "Wide Row Machine"
-        },
-        {
-          "notes": "Strict, RPE 6-7 (failure yok)",
-          "sets": "3x5-8",
-          "name": "Barbell Overhead Press"
-        },
-        {
-          "notes": "RPE 6-7 (failure yok)",
-          "sets": "2x8-12",
-          "name": "Chest Press"
-        },
-        {
-          "notes": "Skapula + arka omuz",
-          "sets": "2x12-15",
-          "name": "Face Pull"
-        },
-        {
-          "notes": "Adductor + lateral core",
-          "sets": "3x20-40 sn/taraf",
-          "name": "Copenhagen Plank"
-        },
-        {
-          "notes": "Gastrocnemius (diz düz)",
-          "sets": "3x10-15",
-          "name": "Standing Calf Raise"
-        }
-      ]
+      "detail": null
     },
     {
       "date": "2026-01-03",
@@ -791,11 +552,11 @@
     {
       "date": "2026-01-07",
       "dayOfWeek": "Çarşamba",
-      "type": "rest",
-      "title": "REST",
-      "duration": 0,
+      "type": "strength_maintenance",
+      "title": "Üst Vücut Çok Hafif (Opsiyonel)",
+      "duration": 20,
       "tss": null,
-      "description": "Dinlenme - FTP test hazırlığı.",
+      "description": "Recovery haftası: bacak yok. Çok hafif üst vücut + core.",
       "week": 4,
       "phase": "base",
       "isRecoveryWeek": true,
@@ -842,36 +603,36 @@
       "date": "2026-01-10",
       "dayOfWeek": "Cumartesi",
       "type": "z2_endurance",
-      "title": "Post-Test Z2",
-      "duration": 75,
+      "title": "Uzun Z2 (Post-Test)",
+      "duration": 90,
       "tss": 55,
-      "description": "Test sonrası toparlanma sürüşü. Yeni FTP zonlarıyla tanış.",
+      "description": "Test sonrası toparlanma + aerobik baz. Z2 rahat olmalı.",
       "week": 5,
       "phase": "build",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
       "detail": {
         "warmup": "15dk",
-        "main": "45dk @yeni %60-70 FTP",
+        "main": "60dk @yeni %60-70 FTP",
         "cooldown": "15dk"
       }
     },
     {
       "date": "2026-01-11",
       "dayOfWeek": "Pazar",
-      "type": "sweet_spot",
-      "title": "Sweet Spot - Yeni FTP",
-      "duration": 75,
-      "tss": 80,
-      "description": "Yeni FTP değerleriyle Sweet Spot.",
+      "type": "recovery",
+      "title": "Opsiyonel Recovery (Akşam)",
+      "duration": 45,
+      "tss": 25,
+      "description": "Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).",
       "week": 5,
       "phase": "build",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
       "detail": {
-        "warmup": "15dk",
-        "main": "3x15dk @%88-93 yeni FTP, 5dk dinlenme",
-        "cooldown": "10dk"
+        "warmup": "Yok",
+        "main": "45dk çok hafif @%50-60 FTP",
+        "cooldown": "Yok"
       }
     },
     {
@@ -879,46 +640,14 @@
       "dayOfWeek": "Pazartesi",
       "type": "strength_a",
       "title": "Ağırlık A - Build Phase",
-      "duration": 40,
+      "duration": 60,
       "tss": null,
       "description": "Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.",
       "week": 5,
       "phase": "build",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null,
-      "strengthExercises": [
-        {
-          "notes": "RPE 7-8 (ağır, kontrollü)",
-          "sets": "4x4-6",
-          "name": "Back Squat"
-        },
-        {
-          "notes": "RPE 7-8 (hamstring/hip hinge)",
-          "sets": "3x6-8",
-          "name": "Romanian Deadlift"
-        },
-        {
-          "notes": "RPE 7 (stabil, kontrollü)",
-          "sets": "2-3x6-8/bacak",
-          "name": "Bulgarian Split Squat"
-        },
-        {
-          "notes": "Soleus odaklı (diz bükülü)",
-          "sets": "4x8-12",
-          "name": "Seated Calf Raise"
-        },
-        {
-          "notes": "Anti-rotation, kontrollü",
-          "sets": "3x10-12/taraf",
-          "name": "Pallof Press"
-        },
-        {
-          "notes": "Anti-extension, form bozulmadan",
-          "sets": "3x6-10",
-          "name": "Ab Wheel"
-        }
-      ]
+      "detail": null
     },
     {
       "date": "2026-01-13",
@@ -956,11 +685,25 @@
     {
       "date": "2026-01-15",
       "dayOfWeek": "Perşembe",
+      "type": "strength_b",
+      "title": "Ağırlık B",
+      "duration": 60,
+      "tss": null,
+      "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.",
+      "week": 5,
+      "phase": "build",
+      "isRecoveryWeek": false,
+      "myWhooshWorkout": null,
+      "detail": null
+    },
+    {
+      "date": "2026-01-16",
+      "dayOfWeek": "Cuma",
       "type": "vo2max",
       "title": "VO2max Intervals",
       "duration": 60,
       "tss": 75,
-      "description": "İlk VO2max antrenmanı - maksimal aerobik kapasite.",
+      "description": "VO2max intervalları (hafta içi ≤75dk).",
       "week": 5,
       "phase": "build",
       "isRecoveryWeek": false,
@@ -973,59 +716,49 @@
       }
     },
     {
-      "date": "2026-01-16",
-      "dayOfWeek": "Cuma",
-      "type": "rest",
-      "title": "REST",
-      "duration": 0,
-      "tss": null,
-      "description": "Tam dinlenme - yoğun hafta sonrası.",
-      "week": 5,
-      "phase": "build",
-      "isRecoveryWeek": false,
-      "myWhooshWorkout": null,
-      "detail": null
-    },
-    {
       "date": "2026-01-17",
       "dayOfWeek": "Cumartesi",
-      "type": "sweet_spot",
-      "title": "Sweet Spot Long",
-      "duration": 100,
-      "tss": 95,
-      "description": "Uzun Sweet Spot blokları.",
+      "type": "z2_endurance",
+      "title": "Uzun Z2 Ride",
+      "duration": 120,
+      "tss": 85,
+      "description": "Hafta sonu uzun sürüş - dayanıklılık yapı taşı.",
       "week": 6,
       "phase": "build",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
       "detail": {
         "warmup": "15dk",
-        "main": "2x25dk @%88-93 FTP, 10dk dinlenme",
+        "main": "90dk @%60-70 FTP",
         "cooldown": "15dk"
       }
     },
     {
       "date": "2026-01-18",
       "dayOfWeek": "Pazar",
-      "type": "z2_endurance",
-      "title": "Z2 Long Ride",
-      "duration": 90,
-      "tss": 65,
-      "description": "Aerobik baz koruma sürüşü.",
+      "type": "recovery",
+      "title": "Opsiyonel Recovery (Akşam)",
+      "duration": 45,
+      "tss": 25,
+      "description": "Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).",
       "week": 6,
       "phase": "build",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": {
+        "warmup": "Yok",
+        "main": "45dk çok hafif @%50-60 FTP",
+        "cooldown": "Yok"
+      }
     },
     {
       "date": "2026-01-19",
       "dayOfWeek": "Pazartesi",
-      "type": "strength_maintenance",
-      "title": "Ağırlık - Maintenance",
-      "duration": 35,
+      "type": "strength_a",
+      "title": "Ağırlık A",
+      "duration": 60,
       "tss": null,
-      "description": "Haftada 1 güç koruma.",
+      "description": "Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.",
       "week": 6,
       "phase": "build",
       "isRecoveryWeek": false,
@@ -1067,11 +800,25 @@
     {
       "date": "2026-01-22",
       "dayOfWeek": "Perşembe",
+      "type": "strength_b",
+      "title": "Ağırlık B",
+      "duration": 60,
+      "tss": null,
+      "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.",
+      "week": 6,
+      "phase": "build",
+      "isRecoveryWeek": false,
+      "myWhooshWorkout": null,
+      "detail": null
+    },
+    {
+      "date": "2026-01-23",
+      "dayOfWeek": "Cuma",
       "type": "vo2max",
       "title": "VO2max Extended",
       "duration": 65,
       "tss": 80,
-      "description": "Artan VO2max hacmi.",
+      "description": "VO2max (hafta içi ≤75dk).",
       "week": 6,
       "phase": "build",
       "isRecoveryWeek": false,
@@ -1083,59 +830,49 @@
       }
     },
     {
-      "date": "2026-01-23",
-      "dayOfWeek": "Cuma",
-      "type": "z2_endurance",
-      "title": "Easy Z2",
-      "duration": 45,
-      "tss": 30,
-      "description": "Hafif sürüş - hafta sonu öncesi.",
-      "week": 6,
-      "phase": "build",
-      "isRecoveryWeek": false,
-      "myWhooshWorkout": null,
-      "detail": null
-    },
-    {
       "date": "2026-01-24",
       "dayOfWeek": "Cumartesi",
-      "type": "race_simulation",
-      "title": "Race Simulation",
-      "duration": 105,
-      "tss": 100,
-      "description": "Yarış simülasyonu - değişken tempo.",
+      "type": "z2_endurance",
+      "title": "Uzun Z2 Ride",
+      "duration": 120,
+      "tss": 85,
+      "description": "Hafta sonu uzun sürüş - dayanıklılık yapı taşı.",
       "week": 7,
       "phase": "build",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
       "detail": {
         "warmup": "15dk",
-        "main": "75dk: Z2 + 4x5dk tempo değişimi (Z3-Z4-Z3)",
+        "main": "90dk @%60-70 FTP",
         "cooldown": "15dk"
       }
     },
     {
       "date": "2026-01-25",
       "dayOfWeek": "Pazar",
-      "type": "z2_endurance",
-      "title": "Z2 Long",
-      "duration": 90,
-      "tss": 65,
-      "description": "Hafta sonu uzun sürüş.",
+      "type": "recovery",
+      "title": "Opsiyonel Recovery (Akşam)",
+      "duration": 45,
+      "tss": 25,
+      "description": "Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).",
       "week": 7,
       "phase": "build",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": {
+        "warmup": "Yok",
+        "main": "45dk çok hafif @%50-60 FTP",
+        "cooldown": "Yok"
+      }
     },
     {
       "date": "2026-01-26",
       "dayOfWeek": "Pazartesi",
-      "type": "strength_maintenance",
-      "title": "Ağırlık - Light",
-      "duration": 30,
+      "type": "strength_a",
+      "title": "Ağırlık A",
+      "duration": 60,
       "tss": null,
-      "description": "Hafif güç koruma.",
+      "description": "Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.",
       "week": 7,
       "phase": "build",
       "isRecoveryWeek": false,
@@ -1177,34 +914,34 @@
     {
       "date": "2026-01-29",
       "dayOfWeek": "Perşembe",
-      "type": "threshold",
-      "title": "Threshold Blocks",
-      "duration": 80,
-      "tss": 95,
-      "description": "Uzun Threshold blokları - Build fazı zirvesi.",
-      "week": 7,
-      "phase": "build",
-      "isRecoveryWeek": false,
-      "myWhooshWorkout": null,
-      "detail": {
-        "warmup": "15dk",
-        "main": "2x20dk @%95-100 FTP, 10dk dinlenme",
-        "cooldown": "15dk"
-      }
-    },
-    {
-      "date": "2026-01-30",
-      "dayOfWeek": "Cuma",
-      "type": "recovery",
-      "title": "Easy Recovery",
-      "duration": 30,
-      "tss": 15,
-      "description": "Çok hafif - recovery haftasına hazırlık.",
+      "type": "strength_b",
+      "title": "Ağırlık B",
+      "duration": 60,
+      "tss": null,
+      "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.",
       "week": 7,
       "phase": "build",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
       "detail": null
+    },
+    {
+      "date": "2026-01-30",
+      "dayOfWeek": "Cuma",
+      "type": "threshold",
+      "title": "Threshold Blocks (Kısa)",
+      "duration": 75,
+      "tss": 90,
+      "description": "Threshold blokları (hafta içi ≤75dk).",
+      "week": 7,
+      "phase": "build",
+      "isRecoveryWeek": false,
+      "myWhooshWorkout": null,
+      "detail": {
+        "warmup": "12dk",
+        "main": "2x18dk @%95-100 FTP, 8dk dinlenme",
+        "cooldown": "13dk"
+      }
     },
     {
       "date": "2026-01-31",
@@ -1265,11 +1002,11 @@
     {
       "date": "2026-02-04",
       "dayOfWeek": "Çarşamba",
-      "type": "rest",
-      "title": "REST",
-      "duration": 0,
+      "type": "strength_maintenance",
+      "title": "Üst Vücut Çok Hafif (Opsiyonel)",
+      "duration": 20,
       "tss": null,
-      "description": "Test öncesi dinlenme.",
+      "description": "Test haftası: bacak yok. Çok hafif üst vücut + core.",
       "week": 8,
       "phase": "build",
       "isRecoveryWeek": true,
@@ -1316,42 +1053,47 @@
       "date": "2026-02-07",
       "dayOfWeek": "Cumartesi",
       "type": "z2_endurance",
-      "title": "Post-Test Recovery",
-      "duration": 70,
-      "tss": 50,
-      "description": "Test sonrası toparlanma. Yeni FTP ile zonlar güncellendi!",
-      "week": 9,
-      "phase": "peak",
-      "isRecoveryWeek": false,
-      "myWhooshWorkout": null,
-      "detail": null
-    },
-    {
-      "date": "2026-02-08",
-      "dayOfWeek": "Pazar",
-      "type": "sweet_spot",
-      "title": "Sweet Spot - New FTP",
+      "title": "Uzun Z2 (Post-Test)",
       "duration": 90,
-      "tss": 90,
-      "description": "Yeni FTP değerleriyle Sweet Spot.",
+      "tss": 65,
+      "description": "Test sonrası toparlanma + aerobik hacim. (Hafta sonu uzun sürüş Cumartesi.)",
       "week": 9,
       "phase": "peak",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
       "detail": {
-        "warmup": "15dk",
-        "main": "3x18dk @%88-93 yeni FTP, 6dk dinlenme",
-        "cooldown": "15dk"
+        "warmup": "15dk progresif",
+        "main": "60dk sabit @%60-70 FTP",
+        "cooldown": "15dk kolay",
+        "cadence": "80-90 rpm"
+      }
+    },
+    {
+      "date": "2026-02-08",
+      "dayOfWeek": "Pazar",
+      "type": "recovery",
+      "title": "Opsiyonel Recovery (Akşam)",
+      "duration": 45,
+      "tss": 25,
+      "description": "Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).",
+      "week": 9,
+      "phase": "peak",
+      "isRecoveryWeek": false,
+      "myWhooshWorkout": null,
+      "detail": {
+        "warmup": "Yok",
+        "main": "45dk çok hafif @%50-60 FTP",
+        "cooldown": "Yok"
       }
     },
     {
       "date": "2026-02-09",
       "dayOfWeek": "Pazartesi",
-      "type": "strength_maintenance",
-      "title": "Ağırlık - Minimum",
-      "duration": 25,
+      "type": "strength_a",
+      "title": "Ağırlık A - Temel Güç",
+      "duration": 60,
       "tss": null,
-      "description": "Sadece koruma - bisiklete odaklan.",
+      "description": "Squat + hinge + tek bacak + core + soleus.",
       "week": 9,
       "phase": "peak",
       "isRecoveryWeek": false,
@@ -1363,17 +1105,17 @@
       "dayOfWeek": "Salı",
       "type": "over_unders",
       "title": "Over-Unders Intense",
-      "duration": 80,
-      "tss": 95,
-      "description": "Yoğun Over-Under antrenmanı.",
+      "duration": 75,
+      "tss": 90,
+      "description": "Yoğun Over-Under (hafta içi ≤75dk).",
       "week": 9,
       "phase": "peak",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
       "detail": {
-        "warmup": "15dk",
+        "warmup": "12dk",
         "main": "4x9dk: (2dk @%105 / 1dk @%95) x3, 5dk dinlenme",
-        "cooldown": "12dk"
+        "cooldown": "10dk"
       }
     },
     {
@@ -1393,29 +1135,11 @@
     {
       "date": "2026-02-12",
       "dayOfWeek": "Perşembe",
-      "type": "threshold",
-      "title": "Threshold Blocks",
-      "duration": 85,
-      "tss": 100,
-      "description": "Uzun Threshold blokları.",
-      "week": 9,
-      "phase": "peak",
-      "isRecoveryWeek": false,
-      "myWhooshWorkout": null,
-      "detail": {
-        "warmup": "15dk",
-        "main": "2x22dk @%95-100 FTP, 10dk dinlenme",
-        "cooldown": "16dk"
-      }
-    },
-    {
-      "date": "2026-02-13",
-      "dayOfWeek": "Cuma",
-      "type": "rest",
-      "title": "REST",
-      "duration": 0,
+      "type": "strength_b",
+      "title": "Ağırlık B",
+      "duration": 60,
       "tss": null,
-      "description": "Tam dinlenme.",
+      "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. (Bisiklet günlerini korur.)",
       "week": 9,
       "phase": "peak",
       "isRecoveryWeek": false,
@@ -1423,45 +1147,67 @@
       "detail": null
     },
     {
+      "date": "2026-02-13",
+      "dayOfWeek": "Cuma",
+      "type": "sweet_spot",
+      "title": "Sweet Spot (Kısa)",
+      "duration": 75,
+      "tss": 85,
+      "description": "Haftanın ana kalite seansı (hafta içi ≤75dk).",
+      "week": 9,
+      "phase": "peak",
+      "isRecoveryWeek": false,
+      "myWhooshWorkout": null,
+      "detail": {
+        "warmup": "15dk",
+        "main": "3x12dk @%88-93 FTP, 5dk dinlenme",
+        "cooldown": "12dk"
+      }
+    },
+    {
       "date": "2026-02-14",
       "dayOfWeek": "Cumartesi",
-      "type": "race_simulation",
-      "title": "Race Simulation",
+      "type": "z2_endurance",
+      "title": "Uzun Z2 Ride",
       "duration": 120,
-      "tss": 110,
-      "description": "Uzun yarış simülasyonu - zihinsel hazırlık.",
+      "tss": 85,
+      "description": "Hafta sonu uzun sürüş (Z2).",
       "week": 10,
       "phase": "peak",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
       "detail": {
         "warmup": "15dk",
-        "main": "90dk değişken tempo: Z2 base + 5x(3dk Z4 + 2dk Z2)",
+        "main": "90dk sabit @%60-70 FTP",
         "cooldown": "15dk"
       }
     },
     {
       "date": "2026-02-15",
       "dayOfWeek": "Pazar",
-      "type": "z2_endurance",
-      "title": "Z2 Long",
-      "duration": 100,
-      "tss": 75,
-      "description": "Uzun aerobik sürüş.",
+      "type": "recovery",
+      "title": "Opsiyonel Recovery (Akşam)",
+      "duration": 45,
+      "tss": 25,
+      "description": "Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).",
       "week": 10,
       "phase": "peak",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": {
+        "warmup": "Yok",
+        "main": "45dk çok hafif @%50-60 FTP",
+        "cooldown": "Yok"
+      }
     },
     {
       "date": "2026-02-16",
       "dayOfWeek": "Pazartesi",
-      "type": "strength_maintenance",
-      "title": "Ağırlık - Final",
-      "duration": 25,
+      "type": "strength_a",
+      "title": "Ağırlık A - Temel Güç",
+      "duration": 60,
       "tss": null,
-      "description": "Son düzenli ağırlık seansı.",
+      "description": "Squat + hinge + tek bacak + core + soleus.",
       "week": 10,
       "phase": "peak",
       "isRecoveryWeek": false,
@@ -1503,29 +1249,11 @@
     {
       "date": "2026-02-19",
       "dayOfWeek": "Perşembe",
-      "type": "over_unders",
-      "title": "Over-Unders Final",
-      "duration": 80,
-      "tss": 95,
-      "description": "Son yoğun Over-Under seansı.",
-      "week": 10,
-      "phase": "peak",
-      "isRecoveryWeek": false,
-      "myWhooshWorkout": null,
-      "detail": {
-        "warmup": "15dk",
-        "main": "4x10dk: (2dk @%105 / 1dk @%95) x3.3, 5dk dinlenme",
-        "cooldown": "10dk"
-      }
-    },
-    {
-      "date": "2026-02-20",
-      "dayOfWeek": "Cuma",
-      "type": "recovery",
-      "title": "Easy Spin",
-      "duration": 30,
-      "tss": 15,
-      "description": "Hafif sürüş.",
+      "type": "strength_b",
+      "title": "Ağırlık B",
+      "duration": 60,
+      "tss": null,
+      "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. (Cuma kalitesini korur.)",
       "week": 10,
       "phase": "peak",
       "isRecoveryWeek": false,
@@ -1533,45 +1261,68 @@
       "detail": null
     },
     {
+      "date": "2026-02-20",
+      "dayOfWeek": "Cuma",
+      "type": "over_unders",
+      "title": "Over-Unders (Kısa)",
+      "duration": 75,
+      "tss": 90,
+      "description": "Haftanın ana kalite seansı (hafta içi ≤75dk).",
+      "week": 10,
+      "phase": "peak",
+      "isRecoveryWeek": false,
+      "myWhooshWorkout": null,
+      "detail": {
+        "warmup": "12dk",
+        "main": "4x9dk: (2dk @%105 / 1dk @%95) x3, 5dk dinlenme",
+        "cooldown": "10dk"
+      }
+    },
+    {
       "date": "2026-02-21",
       "dayOfWeek": "Cumartesi",
-      "type": "sweet_spot",
-      "title": "Sweet Spot Long",
-      "duration": 95,
-      "tss": 95,
-      "description": "Son büyük Sweet Spot seansı.",
+      "type": "z2_endurance",
+      "title": "Uzun Z2 Ride",
+      "duration": 120,
+      "tss": 85,
+      "description": "Hafta sonu uzun sürüş (Z2).",
       "week": 11,
       "phase": "peak",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
       "detail": {
-        "warmup": "15dk",
-        "main": "2x28dk @%88-93 FTP, 10dk dinlenme",
-        "cooldown": "14dk"
+        "warmup": "15dk progresif",
+        "main": "90dk sabit @%60-70 FTP",
+        "cooldown": "15dk kolay",
+        "cadence": "80-90 rpm"
       }
     },
     {
       "date": "2026-02-22",
       "dayOfWeek": "Pazar",
-      "type": "z2_endurance",
-      "title": "Z2 Long",
-      "duration": 90,
-      "tss": 65,
-      "description": "Aerobik sürüş.",
+      "type": "recovery",
+      "title": "Opsiyonel Recovery (Akşam)",
+      "duration": 45,
+      "tss": 25,
+      "description": "Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).",
       "week": 11,
       "phase": "peak",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": {
+        "warmup": "Yok",
+        "main": "45dk çok hafif @%50-60 FTP",
+        "cooldown": "Yok"
+      }
     },
     {
       "date": "2026-02-23",
       "dayOfWeek": "Pazartesi",
-      "type": "rest",
-      "title": "REST",
-      "duration": 0,
+      "type": "strength_a",
+      "title": "Ağırlık A - Temel Güç",
+      "duration": 60,
       "tss": null,
-      "description": "Ağırlık yok - sadece bisiklet.",
+      "description": "Squat + hinge + tek bacak + core + soleus.",
       "week": 11,
       "phase": "peak",
       "isRecoveryWeek": false,
@@ -1583,17 +1334,17 @@
       "dayOfWeek": "Salı",
       "type": "threshold",
       "title": "Threshold Final",
-      "duration": 80,
-      "tss": 95,
-      "description": "Son büyük Threshold antrenmanı.",
+      "duration": 75,
+      "tss": 90,
+      "description": "Son büyük Threshold (hafta içi ≤75dk).",
       "week": 11,
       "phase": "peak",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
       "detail": {
-        "warmup": "15dk",
+        "warmup": "12dk",
         "main": "3x15dk @%95-100 FTP, 7dk dinlenme",
-        "cooldown": "12dk"
+        "cooldown": "10dk"
       }
     },
     {
@@ -1613,6 +1364,20 @@
     {
       "date": "2026-02-26",
       "dayOfWeek": "Perşembe",
+      "type": "strength_b",
+      "title": "Ağırlık B",
+      "duration": 60,
+      "tss": null,
+      "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. (Taper öncesi son.)",
+      "week": 11,
+      "phase": "peak",
+      "isRecoveryWeek": false,
+      "myWhooshWorkout": null,
+      "detail": null
+    },
+    {
+      "date": "2026-02-27",
+      "dayOfWeek": "Cuma",
       "type": "vo2max",
       "title": "VO2max Final",
       "duration": 65,
@@ -1627,20 +1392,6 @@
         "main": "5x3dk @%115-120 FTP, 3dk dinlenme",
         "cooldown": "15dk"
       }
-    },
-    {
-      "date": "2026-02-27",
-      "dayOfWeek": "Cuma",
-      "type": "recovery",
-      "title": "Easy Recovery",
-      "duration": 30,
-      "tss": 15,
-      "description": "Taper başlangıcı.",
-      "week": 11,
-      "phase": "peak",
-      "isRecoveryWeek": false,
-      "myWhooshWorkout": null,
-      "detail": null
     },
     {
       "date": "2026-02-28",
@@ -1663,29 +1414,29 @@
     {
       "date": "2026-03-01",
       "dayOfWeek": "Pazar",
-      "type": "sweet_spot",
-      "title": "Taper Sweet Spot",
-      "duration": 50,
-      "tss": 55,
-      "description": "Kısa ama kaliteli Sweet Spot.",
+      "type": "recovery",
+      "title": "Opsiyonel Recovery (Akşam)",
+      "duration": 45,
+      "tss": 25,
+      "description": "Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).",
       "week": 12,
       "phase": "peak",
       "isRecoveryWeek": true,
       "myWhooshWorkout": null,
       "detail": {
-        "warmup": "15dk",
-        "main": "2x10dk @%88-93 FTP, 5dk dinlenme",
-        "cooldown": "10dk"
+        "warmup": "Yok",
+        "main": "45dk çok hafif @%50-60 FTP",
+        "cooldown": "Yok"
       }
     },
     {
       "date": "2026-03-02",
       "dayOfWeek": "Pazartesi",
-      "type": "rest",
-      "title": "REST",
-      "duration": 0,
+      "type": "strength_maintenance",
+      "title": "Üst Vücut Hafif (Opsiyonel)",
+      "duration": 30,
       "tss": null,
-      "description": "Tam dinlenme.",
+      "description": "Taper haftası: bacakları yormadan üst vücut + core bakımı.",
       "week": 12,
       "phase": "peak",
       "isRecoveryWeek": true,
@@ -1713,11 +1464,11 @@
     {
       "date": "2026-03-04",
       "dayOfWeek": "Çarşamba",
-      "type": "rest",
-      "title": "REST",
-      "duration": 0,
+      "type": "strength_maintenance",
+      "title": "Üst Vücut Çok Hafif (Opsiyonel)",
+      "duration": 20,
       "tss": null,
-      "description": "Final test öncesi tam dinlenme.",
+      "description": "Bacak yok. Çok hafif pomp + mobilite; formu taze tut.",
       "week": 12,
       "phase": "peak",
       "isRecoveryWeek": true,
