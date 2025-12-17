@@ -25,19 +25,27 @@ const STRENGTH_B_EXERCISES: StrengthExercise[] = [
   { name: 'Standing Calf Raise', sets: '3x10-15', notes: 'Gastrocnemius (diz düz)' }
 ];
 
+const STRENGTH_UPPER_LIGHT_EXERCISES: StrengthExercise[] = [
+  { name: 'Seated Row', sets: '3x10-12', notes: 'Kontrollü, 1 sn sık' },
+  { name: 'Chest Press', sets: '2x10-12', notes: 'RPE 6-7 (failure yok)' },
+  { name: 'Face Pull', sets: '2x12-15', notes: 'Skapula + arka omuz' },
+  { name: 'Pallof Press', sets: '2x10-12/taraf', notes: 'Kontrollü' },
+  { name: 'Standing Calf Raise', sets: '2x12-15', notes: 'Hafif/orta' }
+];
+
 export const weekSummaries: WeekSummary[] = [
   { week: 1, phase: 'base', startDate: '2025-12-13', endDate: '2025-12-19', targetTSS: 300, targetHours: 5.5, strengthSessions: 2, isRecoveryWeek: false, focus: 'Adaptasyon, aerobik temel' },
   { week: 2, phase: 'base', startDate: '2025-12-20', endDate: '2025-12-26', targetTSS: 340, targetHours: 6, strengthSessions: 2, isRecoveryWeek: false, focus: 'Aerobik kapasite geliştirme' },
   { week: 3, phase: 'base', startDate: '2025-12-27', endDate: '2026-01-02', targetTSS: 380, targetHours: 6.5, strengthSessions: 2, isRecoveryWeek: false, focus: 'Dayanıklılık yüklemesi' },
-  { week: 4, phase: 'base', startDate: '2026-01-03', endDate: '2026-01-09', targetTSS: 280, targetHours: 4.5, strengthSessions: 1, isRecoveryWeek: true, focus: 'RECOVERY WEEK - Toparlanma' },
+  { week: 4, phase: 'base', startDate: '2026-01-03', endDate: '2026-01-09', targetTSS: 280, targetHours: 4.5, strengthSessions: 2, isRecoveryWeek: true, focus: 'RECOVERY WEEK - Toparlanma' },
   { week: 5, phase: 'build', startDate: '2026-01-10', endDate: '2026-01-16', targetTSS: 400, targetHours: 7, strengthSessions: 2, isRecoveryWeek: false, focus: 'Threshold geliştirme başlangıcı' },
-  { week: 6, phase: 'build', startDate: '2026-01-17', endDate: '2026-01-23', targetTSS: 450, targetHours: 7.5, strengthSessions: 1, isRecoveryWeek: false, focus: 'VO2max intervallar' },
-  { week: 7, phase: 'build', startDate: '2026-01-24', endDate: '2026-01-30', targetTSS: 480, targetHours: 8, strengthSessions: 1, isRecoveryWeek: false, focus: 'Yoğun threshold blokları' },
-  { week: 8, phase: 'build', startDate: '2026-01-31', endDate: '2026-02-06', targetTSS: 320, targetHours: 5, strengthSessions: 1, isRecoveryWeek: true, focus: 'RECOVERY WEEK - FTP Test' },
-  { week: 9, phase: 'peak', startDate: '2026-02-07', endDate: '2026-02-13', targetTSS: 480, targetHours: 8.5, strengthSessions: 1, isRecoveryWeek: false, focus: 'Peak phase başlangıcı' },
-  { week: 10, phase: 'peak', startDate: '2026-02-14', endDate: '2026-02-20', targetTSS: 520, targetHours: 9, strengthSessions: 1, isRecoveryWeek: false, focus: 'Maksimum yüklenme' },
-  { week: 11, phase: 'peak', startDate: '2026-02-21', endDate: '2026-02-27', targetTSS: 500, targetHours: 8.5, strengthSessions: 0, isRecoveryWeek: false, focus: 'Son yüklenme haftası' },
-  { week: 12, phase: 'peak', startDate: '2026-02-28', endDate: '2026-03-06', targetTSS: 350, targetHours: 6, strengthSessions: 0, isRecoveryWeek: true, focus: 'TAPER + Final FTP Test' },
+  { week: 6, phase: 'build', startDate: '2026-01-17', endDate: '2026-01-23', targetTSS: 450, targetHours: 7.5, strengthSessions: 2, isRecoveryWeek: false, focus: 'VO2max intervallar' },
+  { week: 7, phase: 'build', startDate: '2026-01-24', endDate: '2026-01-30', targetTSS: 480, targetHours: 8, strengthSessions: 2, isRecoveryWeek: false, focus: 'Yoğun threshold blokları' },
+  { week: 8, phase: 'build', startDate: '2026-01-31', endDate: '2026-02-06', targetTSS: 320, targetHours: 5, strengthSessions: 2, isRecoveryWeek: true, focus: 'RECOVERY WEEK - FTP Test' },
+  { week: 9, phase: 'peak', startDate: '2026-02-07', endDate: '2026-02-13', targetTSS: 480, targetHours: 8.5, strengthSessions: 2, isRecoveryWeek: false, focus: 'Peak phase başlangıcı' },
+  { week: 10, phase: 'peak', startDate: '2026-02-14', endDate: '2026-02-20', targetTSS: 520, targetHours: 9, strengthSessions: 2, isRecoveryWeek: false, focus: 'Maksimum yüklenme' },
+  { week: 11, phase: 'peak', startDate: '2026-02-21', endDate: '2026-02-27', targetTSS: 500, targetHours: 8.5, strengthSessions: 2, isRecoveryWeek: false, focus: 'Son yüklenme haftası' },
+  { week: 12, phase: 'peak', startDate: '2026-02-28', endDate: '2026-03-06', targetTSS: 350, targetHours: 6, strengthSessions: 2, isRecoveryWeek: true, focus: 'TAPER + Final FTP Test' },
 ];
 
 export const workouts: Workout[] = [
@@ -45,27 +53,6 @@ export const workouts: Workout[] = [
   {
     date: '2025-12-13',
     dayOfWeek: 'Cumartesi',
-    type: 'z2_endurance',
-    title: 'Z2 Endurance Ride',
-    duration: 60,
-    tss: 45,
-    description: 'Hafif tempolu aerobik sürüş. Yeni plana adaptasyon.',
-    detail: {
-      warmup: '10dk kolay spin, %50-55 FTP',
-      main: '40dk sabit tempo @%60-70 FTP (132-154W)',
-      cooldown: '10dk çok hafif spin',
-      cadence: '85-95 rpm',
-      heartRate: '%65-75 max HR',
-      tips: ['Nefes kontrolü yap', 'Kadansı sabit tut', 'Zorlanıyorsan tempo düşür']
-    },
-    myWhooshWorkout: 'Zone 2 Endurance 60min',
-    phase: 'base',
-    week: 1,
-    isRecoveryWeek: false
-  },
-  {
-    date: '2025-12-14',
-    dayOfWeek: 'Pazar',
     type: 'z2_endurance',
     title: 'Uzun Z2 Ride',
     duration: 90,
@@ -79,6 +66,24 @@ export const workouts: Workout[] = [
       tips: ['Beslenmeyi ihmal etme', 'Her 30dk su iç']
     },
     myWhooshWorkout: 'Zone 2 Endurance 90min veya dış mekan',
+    phase: 'base',
+    week: 1,
+    isRecoveryWeek: false
+  },
+  {
+    date: '2025-12-14',
+    dayOfWeek: 'Pazar',
+    type: 'recovery',
+    title: 'Opsiyonel Recovery (Akşam)',
+    duration: 45,
+    tss: 25,
+    description: 'Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).',
+    detail: {
+      warmup: 'Yok',
+      main: '45dk çok hafif @%50-60 FTP',
+      cooldown: 'Yok'
+    },
+    myWhooshWorkout: null,
     phase: 'base',
     week: 1,
     isRecoveryWeek: false
@@ -442,10 +447,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-01-07',
     dayOfWeek: 'Çarşamba',
-    type: 'rest',
-    title: 'REST',
-    duration: 0,
-    description: 'Dinlenme - FTP test hazırlığı.',
+    type: 'strength_maintenance',
+    title: 'Üst Vücut Çok Hafif (Opsiyonel)',
+    duration: 20,
+    description: 'Recovery haftası: bacak yok. Çok hafif üst vücut + core.',
+    strengthExercises: STRENGTH_UPPER_LIGHT_EXERCISES,
     phase: 'base',
     week: 4,
     isRecoveryWeek: true
@@ -497,13 +503,13 @@ export const workouts: Workout[] = [
     date: '2026-01-10',
     dayOfWeek: 'Cumartesi',
     type: 'z2_endurance',
-    title: 'Post-Test Z2',
-    duration: 75,
+    title: 'Uzun Z2 (Post-Test)',
+    duration: 90,
     tss: 55,
-    description: 'Test sonrası toparlanma sürüşü. Yeni FTP zonlarıyla tanış.',
+    description: 'Test sonrası toparlanma + aerobik baz. Z2 rahat olmalı.',
     detail: {
       warmup: '15dk',
-      main: '45dk @yeni %60-70 FTP',
+      main: '60dk @yeni %60-70 FTP',
       cooldown: '15dk'
     },
     phase: 'build',
@@ -513,15 +519,15 @@ export const workouts: Workout[] = [
   {
     date: '2026-01-11',
     dayOfWeek: 'Pazar',
-    type: 'sweet_spot',
-    title: 'Sweet Spot - Yeni FTP',
-    duration: 75,
-    tss: 80,
-    description: 'Yeni FTP değerleriyle Sweet Spot.',
+    type: 'recovery',
+    title: 'Opsiyonel Recovery (Akşam)',
+    duration: 45,
+    tss: 25,
+    description: 'Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).',
     detail: {
-      warmup: '15dk',
-      main: '3x15dk @%88-93 yeni FTP, 5dk dinlenme',
-      cooldown: '10dk'
+      warmup: 'Yok',
+      main: '45dk çok hafif @%50-60 FTP',
+      cooldown: 'Yok'
     },
     phase: 'build',
     week: 5,
@@ -574,11 +580,23 @@ export const workouts: Workout[] = [
   {
     date: '2026-01-15',
     dayOfWeek: 'Perşembe',
+    type: 'strength_b',
+    title: 'Ağırlık B',
+    duration: 60,
+    description: 'Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.',
+    strengthExercises: STRENGTH_B_EXERCISES,
+    phase: 'build',
+    week: 5,
+    isRecoveryWeek: false
+  },
+  {
+    date: '2026-01-16',
+    dayOfWeek: 'Cuma',
     type: 'vo2max',
     title: 'VO2max Intervals',
     duration: 60,
     tss: 75,
-    description: 'İlk VO2max antrenmanı - maksimal aerobik kapasite.',
+    description: 'VO2max intervalları (hafta içi ≤75dk).',
     detail: {
       warmup: '15dk + 2x1dk sert',
       main: '5x3dk @%110-120 FTP, 3dk dinlenme',
@@ -590,30 +608,19 @@ export const workouts: Workout[] = [
     week: 5,
     isRecoveryWeek: false
   },
-  {
-    date: '2026-01-16',
-    dayOfWeek: 'Cuma',
-    type: 'rest',
-    title: 'REST',
-    duration: 0,
-    description: 'Tam dinlenme - yoğun hafta sonrası.',
-    phase: 'build',
-    week: 5,
-    isRecoveryWeek: false
-  },
 
   // ========== WEEK 6: BUILD (Jan 17-23, 2026) ==========
   {
     date: '2026-01-17',
     dayOfWeek: 'Cumartesi',
-    type: 'sweet_spot',
-    title: 'Sweet Spot Long',
-    duration: 100,
-    tss: 95,
-    description: 'Uzun Sweet Spot blokları.',
+    type: 'z2_endurance',
+    title: 'Uzun Z2 Ride',
+    duration: 120,
+    tss: 85,
+    description: 'Hafta sonu uzun sürüş - dayanıklılık yapı taşı.',
     detail: {
       warmup: '15dk',
-      main: '2x25dk @%88-93 FTP, 10dk dinlenme',
+      main: '90dk @%60-70 FTP',
       cooldown: '15dk'
     },
     phase: 'build',
@@ -623,11 +630,16 @@ export const workouts: Workout[] = [
   {
     date: '2026-01-18',
     dayOfWeek: 'Pazar',
-    type: 'z2_endurance',
-    title: 'Z2 Long Ride',
-    duration: 90,
-    tss: 65,
-    description: 'Aerobik baz koruma sürüşü.',
+    type: 'recovery',
+    title: 'Opsiyonel Recovery (Akşam)',
+    duration: 45,
+    tss: 25,
+    description: 'Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).',
+    detail: {
+      warmup: 'Yok',
+      main: '45dk çok hafif @%50-60 FTP',
+      cooldown: 'Yok'
+    },
     phase: 'build',
     week: 6,
     isRecoveryWeek: false
@@ -635,15 +647,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-01-19',
     dayOfWeek: 'Pazartesi',
-    type: 'strength_maintenance',
-    title: 'Ağırlık - Maintenance',
-    duration: 35,
-    description: 'Haftada 1 güç koruma.',
-    strengthExercises: [
-      { name: 'Back Squat', sets: '3x5', notes: '%80 1RM' },
-      { name: 'RDL', sets: '2x6', notes: '' },
-      { name: 'Core', sets: '2 tur', notes: '' }
-    ],
+    type: 'strength_a',
+    title: 'Ağırlık A',
+    duration: 60,
+    description: 'Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.',
+    strengthExercises: STRENGTH_A_EXERCISES,
     phase: 'build',
     week: 6,
     isRecoveryWeek: false
@@ -680,11 +688,23 @@ export const workouts: Workout[] = [
   {
     date: '2026-01-22',
     dayOfWeek: 'Perşembe',
+    type: 'strength_b',
+    title: 'Ağırlık B',
+    duration: 60,
+    description: 'Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.',
+    strengthExercises: STRENGTH_B_EXERCISES,
+    phase: 'build',
+    week: 6,
+    isRecoveryWeek: false
+  },
+  {
+    date: '2026-01-23',
+    dayOfWeek: 'Cuma',
     type: 'vo2max',
     title: 'VO2max Extended',
     duration: 65,
     tss: 80,
-    description: 'Artan VO2max hacmi.',
+    description: 'VO2max (hafta içi ≤75dk).',
     detail: {
       warmup: '15dk',
       main: '6x3dk @%110-120 FTP, 3dk dinlenme',
@@ -694,33 +714,20 @@ export const workouts: Workout[] = [
     week: 6,
     isRecoveryWeek: false
   },
-  {
-    date: '2026-01-23',
-    dayOfWeek: 'Cuma',
-    type: 'z2_endurance',
-    title: 'Easy Z2',
-    duration: 45,
-    tss: 30,
-    description: 'Hafif sürüş - hafta sonu öncesi.',
-    phase: 'build',
-    week: 6,
-    isRecoveryWeek: false
-  },
 
   // ========== WEEK 7: BUILD PEAK (Jan 24-30, 2026) ==========
   {
     date: '2026-01-24',
     dayOfWeek: 'Cumartesi',
-    type: 'race_simulation',
-    title: 'Race Simulation',
-    duration: 105,
-    tss: 100,
-    description: 'Yarış simülasyonu - değişken tempo.',
+    type: 'z2_endurance',
+    title: 'Uzun Z2 Ride',
+    duration: 120,
+    tss: 85,
+    description: 'Hafta sonu uzun sürüş - dayanıklılık yapı taşı.',
     detail: {
       warmup: '15dk',
-      main: '75dk: Z2 + 4x5dk tempo değişimi (Z3-Z4-Z3)',
-      cooldown: '15dk',
-      tips: ['Gerçek bir yarış gibi düşün']
+      main: '90dk @%60-70 FTP',
+      cooldown: '15dk'
     },
     phase: 'build',
     week: 7,
@@ -729,11 +736,16 @@ export const workouts: Workout[] = [
   {
     date: '2026-01-25',
     dayOfWeek: 'Pazar',
-    type: 'z2_endurance',
-    title: 'Z2 Long',
-    duration: 90,
-    tss: 65,
-    description: 'Hafta sonu uzun sürüş.',
+    type: 'recovery',
+    title: 'Opsiyonel Recovery (Akşam)',
+    duration: 45,
+    tss: 25,
+    description: 'Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).',
+    detail: {
+      warmup: 'Yok',
+      main: '45dk çok hafif @%50-60 FTP',
+      cooldown: 'Yok'
+    },
     phase: 'build',
     week: 7,
     isRecoveryWeek: false
@@ -741,14 +753,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-01-26',
     dayOfWeek: 'Pazartesi',
-    type: 'strength_maintenance',
-    title: 'Ağırlık - Light',
-    duration: 30,
-    description: 'Hafif güç koruma.',
-    strengthExercises: [
-      { name: 'Squat', sets: '2x5', notes: '%75 1RM' },
-      { name: 'Core', sets: '2 tur', notes: '' }
-    ],
+    type: 'strength_a',
+    title: 'Ağırlık A',
+    duration: 60,
+    description: 'Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.',
+    strengthExercises: STRENGTH_A_EXERCISES,
     phase: 'build',
     week: 7,
     isRecoveryWeek: false
@@ -786,17 +795,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-01-29',
     dayOfWeek: 'Perşembe',
-    type: 'threshold',
-    title: 'Threshold Blocks',
-    duration: 80,
-    tss: 95,
-    description: 'Uzun Threshold blokları - Build fazı zirvesi.',
-    detail: {
-      warmup: '15dk',
-      main: '2x20dk @%95-100 FTP, 10dk dinlenme',
-      cooldown: '15dk',
-      tips: ['Bu haftanın en zor antrenmanı', 'Mental gücünü test et']
-    },
+    type: 'strength_b',
+    title: 'Ağırlık B',
+    duration: 60,
+    description: 'Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.',
+    strengthExercises: STRENGTH_B_EXERCISES,
     phase: 'build',
     week: 7,
     isRecoveryWeek: false
@@ -804,11 +807,16 @@ export const workouts: Workout[] = [
   {
     date: '2026-01-30',
     dayOfWeek: 'Cuma',
-    type: 'recovery',
-    title: 'Easy Recovery',
-    duration: 30,
-    tss: 15,
-    description: 'Çok hafif - recovery haftasına hazırlık.',
+    type: 'threshold',
+    title: 'Threshold Blocks (Kısa)',
+    duration: 75,
+    tss: 90,
+    description: 'Threshold blokları (hafta içi ≤75dk).',
+    detail: {
+      warmup: '12dk',
+      main: '2x18dk @%95-100 FTP, 8dk dinlenme',
+      cooldown: '13dk'
+    },
     phase: 'build',
     week: 7,
     isRecoveryWeek: false
@@ -868,10 +876,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-04',
     dayOfWeek: 'Çarşamba',
-    type: 'rest',
-    title: 'REST',
-    duration: 0,
-    description: 'Test öncesi dinlenme.',
+    type: 'strength_maintenance',
+    title: 'Üst Vücut Çok Hafif (Opsiyonel)',
+    duration: 20,
+    description: 'Test haftası: bacak yok. Çok hafif üst vücut + core.',
+    strengthExercises: STRENGTH_UPPER_LIGHT_EXERCISES,
     phase: 'build',
     week: 8,
     isRecoveryWeek: true
@@ -917,10 +926,16 @@ export const workouts: Workout[] = [
     date: '2026-02-07',
     dayOfWeek: 'Cumartesi',
     type: 'z2_endurance',
-    title: 'Post-Test Recovery',
-    duration: 70,
-    tss: 50,
-    description: 'Test sonrası toparlanma. Yeni FTP ile zonlar güncellendi!',
+    title: 'Uzun Z2 (Post-Test)',
+    duration: 90,
+    tss: 65,
+    description: 'Test sonrası toparlanma + aerobik hacim. (Hafta sonu uzun sürüş Cumartesi.)',
+    detail: {
+      warmup: '15dk progresif',
+      main: '60dk sabit @%60-70 FTP',
+      cooldown: '15dk kolay',
+      cadence: '80-90 rpm'
+    },
     phase: 'peak',
     week: 9,
     isRecoveryWeek: false
@@ -928,15 +943,15 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-08',
     dayOfWeek: 'Pazar',
-    type: 'sweet_spot',
-    title: 'Sweet Spot - New FTP',
-    duration: 90,
-    tss: 90,
-    description: 'Yeni FTP değerleriyle Sweet Spot.',
+    type: 'recovery',
+    title: 'Opsiyonel Recovery (Akşam)',
+    duration: 45,
+    tss: 25,
+    description: 'Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).',
     detail: {
-      warmup: '15dk',
-      main: '3x18dk @%88-93 yeni FTP, 6dk dinlenme',
-      cooldown: '15dk'
+      warmup: 'Yok',
+      main: '45dk çok hafif @%50-60 FTP',
+      cooldown: 'Yok'
     },
     phase: 'peak',
     week: 9,
@@ -945,14 +960,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-09',
     dayOfWeek: 'Pazartesi',
-    type: 'strength_maintenance',
-    title: 'Ağırlık - Minimum',
-    duration: 25,
-    description: 'Sadece koruma - bisiklete odaklan.',
-    strengthExercises: [
-      { name: 'Squat', sets: '2x5', notes: '%75 1RM' },
-      { name: 'Core', sets: '1 tur', notes: '' }
-    ],
+    type: 'strength_a',
+    title: 'Ağırlık A - Temel Güç',
+    duration: 60,
+    description: 'Squat + hinge + tek bacak + core + soleus.',
+    strengthExercises: STRENGTH_A_EXERCISES,
     phase: 'peak',
     week: 9,
     isRecoveryWeek: false
@@ -962,13 +974,13 @@ export const workouts: Workout[] = [
     dayOfWeek: 'Salı',
     type: 'over_unders',
     title: 'Over-Unders Intense',
-    duration: 80,
-    tss: 95,
-    description: 'Yoğun Over-Under antrenmanı.',
+    duration: 75,
+    tss: 90,
+    description: 'Yoğun Over-Under (hafta içi ≤75dk).',
     detail: {
-      warmup: '15dk',
+      warmup: '12dk',
       main: '4x9dk: (2dk @%105 / 1dk @%95) x3, 5dk dinlenme',
-      cooldown: '12dk'
+      cooldown: '10dk'
     },
     phase: 'peak',
     week: 9,
@@ -989,16 +1001,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-12',
     dayOfWeek: 'Perşembe',
-    type: 'threshold',
-    title: 'Threshold Blocks',
-    duration: 85,
-    tss: 100,
-    description: 'Uzun Threshold blokları.',
-    detail: {
-      warmup: '15dk',
-      main: '2x22dk @%95-100 FTP, 10dk dinlenme',
-      cooldown: '16dk'
-    },
+    type: 'strength_b',
+    title: 'Ağırlık B',
+    duration: 60,
+    description: 'Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. (Bisiklet günlerini korur.)',
+    strengthExercises: STRENGTH_B_EXERCISES,
     phase: 'peak',
     week: 9,
     isRecoveryWeek: false
@@ -1006,10 +1013,16 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-13',
     dayOfWeek: 'Cuma',
-    type: 'rest',
-    title: 'REST',
-    duration: 0,
-    description: 'Tam dinlenme.',
+    type: 'sweet_spot',
+    title: 'Sweet Spot (Kısa)',
+    duration: 75,
+    tss: 85,
+    description: 'Haftanın ana kalite seansı (hafta içi ≤75dk).',
+    detail: {
+      warmup: '15dk',
+      main: '3x12dk @%88-93 FTP, 5dk dinlenme',
+      cooldown: '12dk'
+    },
     phase: 'peak',
     week: 9,
     isRecoveryWeek: false
@@ -1019,14 +1032,14 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-14',
     dayOfWeek: 'Cumartesi',
-    type: 'race_simulation',
-    title: 'Race Simulation',
+    type: 'z2_endurance',
+    title: 'Uzun Z2 Ride',
     duration: 120,
-    tss: 110,
-    description: 'Uzun yarış simülasyonu - zihinsel hazırlık.',
+    tss: 85,
+    description: 'Hafta sonu uzun sürüş (Z2).',
     detail: {
       warmup: '15dk',
-      main: '90dk değişken tempo: Z2 base + 5x(3dk Z4 + 2dk Z2)',
+      main: '90dk sabit @%60-70 FTP',
       cooldown: '15dk'
     },
     phase: 'peak',
@@ -1036,11 +1049,16 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-15',
     dayOfWeek: 'Pazar',
-    type: 'z2_endurance',
-    title: 'Z2 Long',
-    duration: 100,
-    tss: 75,
-    description: 'Uzun aerobik sürüş.',
+    type: 'recovery',
+    title: 'Opsiyonel Recovery (Akşam)',
+    duration: 45,
+    tss: 25,
+    description: 'Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).',
+    detail: {
+      warmup: 'Yok',
+      main: '45dk çok hafif @%50-60 FTP',
+      cooldown: 'Yok'
+    },
     phase: 'peak',
     week: 10,
     isRecoveryWeek: false
@@ -1048,14 +1066,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-16',
     dayOfWeek: 'Pazartesi',
-    type: 'strength_maintenance',
-    title: 'Ağırlık - Final',
-    duration: 25,
-    description: 'Son düzenli ağırlık seansı.',
-    strengthExercises: [
-      { name: 'Squat', sets: '2x5', notes: '%70 1RM' },
-      { name: 'Core', sets: '1 tur', notes: '' }
-    ],
+    type: 'strength_a',
+    title: 'Ağırlık A - Temel Güç',
+    duration: 60,
+    description: 'Squat + hinge + tek bacak + core + soleus.',
+    strengthExercises: STRENGTH_A_EXERCISES,
     phase: 'peak',
     week: 10,
     isRecoveryWeek: false
@@ -1092,16 +1107,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-19',
     dayOfWeek: 'Perşembe',
-    type: 'over_unders',
-    title: 'Over-Unders Final',
-    duration: 80,
-    tss: 95,
-    description: 'Son yoğun Over-Under seansı.',
-    detail: {
-      warmup: '15dk',
-      main: '4x10dk: (2dk @%105 / 1dk @%95) x3.3, 5dk dinlenme',
-      cooldown: '10dk'
-    },
+    type: 'strength_b',
+    title: 'Ağırlık B',
+    duration: 60,
+    description: 'Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. (Cuma kalitesini korur.)',
+    strengthExercises: STRENGTH_B_EXERCISES,
     phase: 'peak',
     week: 10,
     isRecoveryWeek: false
@@ -1109,11 +1119,16 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-20',
     dayOfWeek: 'Cuma',
-    type: 'recovery',
-    title: 'Easy Spin',
-    duration: 30,
-    tss: 15,
-    description: 'Hafif sürüş.',
+    type: 'over_unders',
+    title: 'Over-Unders (Kısa)',
+    duration: 75,
+    tss: 90,
+    description: 'Haftanın ana kalite seansı (hafta içi ≤75dk).',
+    detail: {
+      warmup: '12dk',
+      main: '4x9dk: (2dk @%105 / 1dk @%95) x3, 5dk dinlenme',
+      cooldown: '10dk'
+    },
     phase: 'peak',
     week: 10,
     isRecoveryWeek: false
@@ -1123,15 +1138,16 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-21',
     dayOfWeek: 'Cumartesi',
-    type: 'sweet_spot',
-    title: 'Sweet Spot Long',
-    duration: 95,
-    tss: 95,
-    description: 'Son büyük Sweet Spot seansı.',
+    type: 'z2_endurance',
+    title: 'Uzun Z2 Ride',
+    duration: 120,
+    tss: 85,
+    description: 'Hafta sonu uzun sürüş (Z2).',
     detail: {
-      warmup: '15dk',
-      main: '2x28dk @%88-93 FTP, 10dk dinlenme',
-      cooldown: '14dk'
+      warmup: '15dk progresif',
+      main: '90dk sabit @%60-70 FTP',
+      cooldown: '15dk kolay',
+      cadence: '80-90 rpm'
     },
     phase: 'peak',
     week: 11,
@@ -1140,11 +1156,16 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-22',
     dayOfWeek: 'Pazar',
-    type: 'z2_endurance',
-    title: 'Z2 Long',
-    duration: 90,
-    tss: 65,
-    description: 'Aerobik sürüş.',
+    type: 'recovery',
+    title: 'Opsiyonel Recovery (Akşam)',
+    duration: 45,
+    tss: 25,
+    description: 'Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).',
+    detail: {
+      warmup: 'Yok',
+      main: '45dk çok hafif @%50-60 FTP',
+      cooldown: 'Yok'
+    },
     phase: 'peak',
     week: 11,
     isRecoveryWeek: false
@@ -1152,10 +1173,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-23',
     dayOfWeek: 'Pazartesi',
-    type: 'rest',
-    title: 'REST',
-    duration: 0,
-    description: 'Ağırlık yok - sadece bisiklet.',
+    type: 'strength_a',
+    title: 'Ağırlık A - Temel Güç',
+    duration: 60,
+    description: 'Squat + hinge + tek bacak + core + soleus.',
+    strengthExercises: STRENGTH_A_EXERCISES,
     phase: 'peak',
     week: 11,
     isRecoveryWeek: false
@@ -1165,13 +1187,13 @@ export const workouts: Workout[] = [
     dayOfWeek: 'Salı',
     type: 'threshold',
     title: 'Threshold Final',
-    duration: 80,
-    tss: 95,
-    description: 'Son büyük Threshold antrenmanı.',
+    duration: 75,
+    tss: 90,
+    description: 'Son büyük Threshold (hafta içi ≤75dk).',
     detail: {
-      warmup: '15dk',
+      warmup: '12dk',
       main: '3x15dk @%95-100 FTP, 7dk dinlenme',
-      cooldown: '12dk'
+      cooldown: '10dk'
     },
     phase: 'peak',
     week: 11,
@@ -1192,6 +1214,18 @@ export const workouts: Workout[] = [
   {
     date: '2026-02-26',
     dayOfWeek: 'Perşembe',
+    type: 'strength_b',
+    title: 'Ağırlık B',
+    duration: 60,
+    description: 'Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. (Taper öncesi son.)',
+    strengthExercises: STRENGTH_B_EXERCISES,
+    phase: 'peak',
+    week: 11,
+    isRecoveryWeek: false
+  },
+  {
+    date: '2026-02-27',
+    dayOfWeek: 'Cuma',
     type: 'vo2max',
     title: 'VO2max Final',
     duration: 65,
@@ -1202,18 +1236,6 @@ export const workouts: Workout[] = [
       main: '5x3dk @%115-120 FTP, 3dk dinlenme',
       cooldown: '15dk'
     },
-    phase: 'peak',
-    week: 11,
-    isRecoveryWeek: false
-  },
-  {
-    date: '2026-02-27',
-    dayOfWeek: 'Cuma',
-    type: 'recovery',
-    title: 'Easy Recovery',
-    duration: 30,
-    tss: 15,
-    description: 'Taper başlangıcı.',
     phase: 'peak',
     week: 11,
     isRecoveryWeek: false
@@ -1240,15 +1262,15 @@ export const workouts: Workout[] = [
   {
     date: '2026-03-01',
     dayOfWeek: 'Pazar',
-    type: 'sweet_spot',
-    title: 'Taper Sweet Spot',
-    duration: 50,
-    tss: 55,
-    description: 'Kısa ama kaliteli Sweet Spot.',
+    type: 'recovery',
+    title: 'Opsiyonel Recovery (Akşam)',
+    duration: 45,
+    tss: 25,
+    description: 'Opsiyonel çok hafif spin veya OFF (aile/gün planına göre).',
     detail: {
-      warmup: '15dk',
-      main: '2x10dk @%88-93 FTP, 5dk dinlenme',
-      cooldown: '10dk'
+      warmup: 'Yok',
+      main: '45dk çok hafif @%50-60 FTP',
+      cooldown: 'Yok'
     },
     phase: 'peak',
     week: 12,
@@ -1257,10 +1279,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-03-02',
     dayOfWeek: 'Pazartesi',
-    type: 'rest',
-    title: 'REST',
-    duration: 0,
-    description: 'Tam dinlenme.',
+    type: 'strength_maintenance',
+    title: 'Üst Vücut Hafif (Opsiyonel)',
+    duration: 30,
+    description: 'Taper haftası: bacakları yormadan üst vücut + core bakımı.',
+    strengthExercises: STRENGTH_UPPER_LIGHT_EXERCISES,
     phase: 'peak',
     week: 12,
     isRecoveryWeek: true
@@ -1285,10 +1308,11 @@ export const workouts: Workout[] = [
   {
     date: '2026-03-04',
     dayOfWeek: 'Çarşamba',
-    type: 'rest',
-    title: 'REST',
-    duration: 0,
-    description: 'Final test öncesi tam dinlenme.',
+    type: 'strength_maintenance',
+    title: 'Üst Vücut Çok Hafif (Opsiyonel)',
+    duration: 20,
+    description: 'Bacak yok. Çok hafif pomp + mobilite; formu taze tut.',
+    strengthExercises: STRENGTH_UPPER_LIGHT_EXERCISES,
     phase: 'peak',
     week: 12,
     isRecoveryWeek: true
