@@ -164,7 +164,7 @@ export const workouts: Workout[] = [
       cadence: '85-95 rpm',
       tips: ['İlk intervalda temkinli başla', 'Son intervalde güç düşerse normal']
     },
-    myWhooshWorkout: 'Sweet Spot workouts',
+    myWhooshWorkout: '/zwo/2025-12-19-sweet-spot-intervals-60.zwo',
     phase: 'base',
     week: 1,
     isRecoveryWeek: false

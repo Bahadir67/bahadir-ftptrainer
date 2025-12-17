@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+  <author>Bahadir FTPTrainer</author>
+  <name>2025-12-19 Sweet Spot Intervals (60m)</name>
+  <description>
+    12dk ısınma, 3x10dk @88-93% FTP (aralarda 4dk kolay), 10dk soğuma. Toplam 60dk.
+  </description>
+  <sportType>bike</sportType>
+  <tags>
+    <tag name="FTP" />
+    <tag name="Sweet Spot" />
+  </tags>
+  <workout>
+    <Warmup Duration="720" PowerLow="0.55" PowerHigh="0.75" />
+
+    <SteadyState Duration="600" Power="0.90" />
+    <SteadyState Duration="240" Power="0.60" />
+
+    <SteadyState Duration="600" Power="0.90" />
+    <SteadyState Duration="240" Power="0.60" />
+
+    <SteadyState Duration="600" Power="0.90" />
+
+    <Cooldown Duration="600" PowerLow="0.55" PowerHigh="0.40" />
+  </workout>
+</workout_file>

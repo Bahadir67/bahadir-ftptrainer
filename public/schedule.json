@@ -3,7 +3,7 @@
   "ftp_target": 250,
   "plan_start": "2025-12-13",
   "plan_end": "2026-03-07",
-  "generated_at": "2025-12-17T13:52:55.602Z",
+  "generated_at": "2025-12-17T13:58:39.876Z",
   "weeks": [
     {
       "week": 1,
@@ -252,7 +252,7 @@
       "week": 1,
       "phase": "base",
       "isRecoveryWeek": false,
-      "myWhooshWorkout": "Sweet Spot workouts",
+      "myWhooshWorkout": "/zwo/2025-12-19-sweet-spot-intervals-60.zwo",
       "detail": {
         "warmup": "15dk progresif (Z1→Z2)",
         "main": "3x10dk @%88-93 FTP (194-205W), 5dk dinlenme",
