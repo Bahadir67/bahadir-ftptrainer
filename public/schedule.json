@@ -185,12 +185,44 @@
       "title": "Ağırlık A - Temel Güç",
       "duration": 45,
       "tss": null,
-      "description": "Alt vücut ve core odaklı güç antrenmanı.",
+      "description": "Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.",
       "week": 1,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": null,
+      "strengthExercises": [
+        {
+          "notes": "RPE 7-8 (ağır, kontrollü)",
+          "sets": "4x4-6",
+          "name": "Back Squat"
+        },
+        {
+          "notes": "RPE 7-8 (hamstring/hip hinge)",
+          "sets": "3x6-8",
+          "name": "Romanian Deadlift"
+        },
+        {
+          "notes": "RPE 7 (stabil, kontrollü)",
+          "sets": "2-3x6-8/bacak",
+          "name": "Bulgarian Split Squat"
+        },
+        {
+          "notes": "Soleus odaklı (diz bükülü)",
+          "sets": "4x8-12",
+          "name": "Seated Calf Raise"
+        },
+        {
+          "notes": "Anti-rotation, kontrollü",
+          "sets": "3x10-12/taraf",
+          "name": "Pallof Press"
+        },
+        {
+          "notes": "Anti-extension, form bozulmadan",
+          "sets": "3x6-10",
+          "name": "Ab Wheel"
+        }
+      ]
     },
     {
       "date": "2025-12-16",
@@ -236,12 +268,59 @@
       "title": "Ağırlık B - Fonksiyonel Güç",
       "duration": 40,
       "tss": null,
-      "description": "Tek bacak ve stabilite odaklı antrenman.",
+      "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.",
       "week": 1,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": null,
+      "strengthExercises": [
+        {
+          "notes": "RPE 7-8 (glute dominant)",
+          "sets": "4x6-10",
+          "name": "Hip Thrust"
+        },
+        {
+          "notes": "RPE 7 (denge + posterior chain)",
+          "sets": "3x8/bacak",
+          "name": "Single Leg Deadlift"
+        },
+        {
+          "notes": "RPE 6-7 (Cuma kalitesini bozmasın)",
+          "sets": "2x8-10/bacak",
+          "name": "Step Ups"
+        },
+        {
+          "notes": "Geniş çekiş, 1 sn sık",
+          "sets": "3x8-12",
+          "name": "Wide Row Machine"
+        },
+        {
+          "notes": "Strict, RPE 6-7 (failure yok)",
+          "sets": "3x5-8",
+          "name": "Barbell Overhead Press"
+        },
+        {
+          "notes": "RPE 6-7 (failure yok)",
+          "sets": "2x8-12",
+          "name": "Chest Press"
+        },
+        {
+          "notes": "Skapula + arka omuz",
+          "sets": "2x12-15",
+          "name": "Face Pull"
+        },
+        {
+          "notes": "Adductor + lateral core",
+          "sets": "3x20-40 sn/taraf",
+          "name": "Copenhagen Plank"
+        },
+        {
+          "notes": "Gastrocnemius (diz düz)",
+          "sets": "3x10-15",
+          "name": "Standing Calf Raise"
+        }
+      ]
     },
     {
       "date": "2025-12-19",
@@ -306,12 +385,44 @@
       "title": "Ağırlık A",
       "duration": 45,
       "tss": null,
-      "description": "Alt vücut ve core - hafif artış.",
+      "description": "Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.",
       "week": 2,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": null,
+      "strengthExercises": [
+        {
+          "notes": "RPE 7-8 (ağır, kontrollü)",
+          "sets": "4x4-6",
+          "name": "Back Squat"
+        },
+        {
+          "notes": "RPE 7-8 (hamstring/hip hinge)",
+          "sets": "3x6-8",
+          "name": "Romanian Deadlift"
+        },
+        {
+          "notes": "RPE 7 (stabil, kontrollü)",
+          "sets": "2-3x6-8/bacak",
+          "name": "Bulgarian Split Squat"
+        },
+        {
+          "notes": "Soleus odaklı (diz bükülü)",
+          "sets": "4x8-12",
+          "name": "Seated Calf Raise"
+        },
+        {
+          "notes": "Anti-rotation, kontrollü",
+          "sets": "3x10-12/taraf",
+          "name": "Pallof Press"
+        },
+        {
+          "notes": "Anti-extension, form bozulmadan",
+          "sets": "3x6-10",
+          "name": "Ab Wheel"
+        }
+      ]
     },
     {
       "date": "2025-12-23",
@@ -356,12 +467,59 @@
       "title": "Ağırlık B",
       "duration": 40,
       "tss": null,
-      "description": "Fonksiyonel güç antrenmanı.",
+      "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.",
       "week": 2,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": null,
+      "strengthExercises": [
+        {
+          "notes": "RPE 7-8 (glute dominant)",
+          "sets": "4x6-10",
+          "name": "Hip Thrust"
+        },
+        {
+          "notes": "RPE 7 (denge + posterior chain)",
+          "sets": "3x8/bacak",
+          "name": "Single Leg Deadlift"
+        },
+        {
+          "notes": "RPE 6-7 (Cuma kalitesini bozmasın)",
+          "sets": "2x8-10/bacak",
+          "name": "Step Ups"
+        },
+        {
+          "notes": "Geniş çekiş, 1 sn sık",
+          "sets": "3x8-12",
+          "name": "Wide Row Machine"
+        },
+        {
+          "notes": "Strict, RPE 6-7 (failure yok)",
+          "sets": "3x5-8",
+          "name": "Barbell Overhead Press"
+        },
+        {
+          "notes": "RPE 6-7 (failure yok)",
+          "sets": "2x8-12",
+          "name": "Chest Press"
+        },
+        {
+          "notes": "Skapula + arka omuz",
+          "sets": "2x12-15",
+          "name": "Face Pull"
+        },
+        {
+          "notes": "Adductor + lateral core",
+          "sets": "3x20-40 sn/taraf",
+          "name": "Copenhagen Plank"
+        },
+        {
+          "notes": "Gastrocnemius (diz düz)",
+          "sets": "3x10-15",
+          "name": "Standing Calf Raise"
+        }
+      ]
     },
     {
       "date": "2025-12-26",
@@ -420,12 +578,44 @@
       "title": "Ağırlık A",
       "duration": 45,
       "tss": null,
-      "description": "Son yoğun ağırlık haftası.",
+      "description": "Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.",
       "week": 3,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": null,
+      "strengthExercises": [
+        {
+          "notes": "RPE 7-8 (ağır, kontrollü)",
+          "sets": "4x4-6",
+          "name": "Back Squat"
+        },
+        {
+          "notes": "RPE 7-8 (hamstring/hip hinge)",
+          "sets": "3x6-8",
+          "name": "Romanian Deadlift"
+        },
+        {
+          "notes": "RPE 7 (stabil, kontrollü)",
+          "sets": "2-3x6-8/bacak",
+          "name": "Bulgarian Split Squat"
+        },
+        {
+          "notes": "Soleus odaklı (diz bükülü)",
+          "sets": "4x8-12",
+          "name": "Seated Calf Raise"
+        },
+        {
+          "notes": "Anti-rotation, kontrollü",
+          "sets": "3x10-12/taraf",
+          "name": "Pallof Press"
+        },
+        {
+          "notes": "Anti-extension, form bozulmadan",
+          "sets": "3x6-10",
+          "name": "Ab Wheel"
+        }
+      ]
     },
     {
       "date": "2025-12-30",
@@ -484,12 +674,59 @@
       "title": "Ağırlık B",
       "duration": 40,
       "tss": null,
-      "description": "Hafta sonu recovery öncesi son ağırlık.",
+      "description": "Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.",
       "week": 3,
       "phase": "base",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": null,
+      "strengthExercises": [
+        {
+          "notes": "RPE 7-8 (glute dominant)",
+          "sets": "4x6-10",
+          "name": "Hip Thrust"
+        },
+        {
+          "notes": "RPE 7 (denge + posterior chain)",
+          "sets": "3x8/bacak",
+          "name": "Single Leg Deadlift"
+        },
+        {
+          "notes": "RPE 6-7 (Cuma kalitesini bozmasın)",
+          "sets": "2x8-10/bacak",
+          "name": "Step Ups"
+        },
+        {
+          "notes": "Geniş çekiş, 1 sn sık",
+          "sets": "3x8-12",
+          "name": "Wide Row Machine"
+        },
+        {
+          "notes": "Strict, RPE 6-7 (failure yok)",
+          "sets": "3x5-8",
+          "name": "Barbell Overhead Press"
+        },
+        {
+          "notes": "RPE 6-7 (failure yok)",
+          "sets": "2x8-12",
+          "name": "Chest Press"
+        },
+        {
+          "notes": "Skapula + arka omuz",
+          "sets": "2x12-15",
+          "name": "Face Pull"
+        },
+        {
+          "notes": "Adductor + lateral core",
+          "sets": "3x20-40 sn/taraf",
+          "name": "Copenhagen Plank"
+        },
+        {
+          "notes": "Gastrocnemius (diz düz)",
+          "sets": "3x10-15",
+          "name": "Standing Calf Raise"
+        }
+      ]
     },
     {
       "date": "2026-01-03",
@@ -644,12 +881,44 @@
       "title": "Ağırlık A - Build Phase",
       "duration": 40,
       "tss": null,
-      "description": "Azaltılmış hacim, korunan yoğunluk.",
+      "description": "Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.",
       "week": 5,
       "phase": "build",
       "isRecoveryWeek": false,
       "myWhooshWorkout": null,
-      "detail": null
+      "detail": null,
+      "strengthExercises": [
+        {
+          "notes": "RPE 7-8 (ağır, kontrollü)",
+          "sets": "4x4-6",
+          "name": "Back Squat"
+        },
+        {
+          "notes": "RPE 7-8 (hamstring/hip hinge)",
+          "sets": "3x6-8",
+          "name": "Romanian Deadlift"
+        },
+        {
+          "notes": "RPE 7 (stabil, kontrollü)",
+          "sets": "2-3x6-8/bacak",
+          "name": "Bulgarian Split Squat"
+        },
+        {
+          "notes": "Soleus odaklı (diz bükülü)",
+          "sets": "4x8-12",
+          "name": "Seated Calf Raise"
+        },
+        {
+          "notes": "Anti-rotation, kontrollü",
+          "sets": "3x10-12/taraf",
+          "name": "Pallof Press"
+        },
+        {
+          "notes": "Anti-extension, form bozulmadan",
+          "sets": "3x6-10",
+          "name": "Ab Wheel"
+        }
+      ]
     },
     {
       "date": "2026-01-13",
