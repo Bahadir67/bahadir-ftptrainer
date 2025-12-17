@@ -63,6 +63,7 @@ export default function WorkoutDetailClient({ workout, weekSummary, date }: Prop
   const zones = calculateZones(currentFtp);
   const today = isToday(date);
   const past = isPast(date);
+  const zwoLink = workout.myWhooshWorkout?.trim().endsWith('.zwo') ? workout.myWhooshWorkout.trim() : null;
 
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
@@ -242,8 +243,14 @@ export default function WorkoutDetailClient({ workout, weekSummary, date }: Prop
         {/* MyWhoosh Suggestion */}
         {workout.myWhooshWorkout && (
           <div className="bg-white rounded-xl border shadow-sm p-6 mb-4">
-            <h2 className="text-lg font-semibold mb-2">🎮 MyWhoosh Önerisi</h2>
-            <p className="text-gray-700">{workout.myWhooshWorkout}</p>
+            <h2 className="text-lg font-semibold mb-2">{zwoLink ? '📥 ZWO Dosyası' : '🎮 MyWhoosh Önerisi'}</h2>
+            {zwoLink ? (
+              <a className="text-blue-600 hover:underline" href={zwoLink} download>
+                {zwoLink}
+              </a>
+            ) : (
+              <p className="text-gray-700">{workout.myWhooshWorkout}</p>
+            )}
           </div>
         )}
 

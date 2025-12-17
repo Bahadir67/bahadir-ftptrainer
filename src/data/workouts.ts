@@ -982,6 +982,7 @@ export const workouts: Workout[] = [
       main: '4x9dk: (2dk @%105 / 1dk @%95) x3, 5dk dinlenme',
       cooldown: '10dk'
     },
+    myWhooshWorkout: '/zwo/2026-02-10-over-unders-intense-75.zwo',
     phase: 'peak',
     week: 9,
     isRecoveryWeek: false
