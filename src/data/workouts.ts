@@ -1,9 +1,29 @@
-import { Workout, WeekSummary } from '@/types/workout';
+import { StrengthExercise, Workout, WeekSummary } from '@/types/workout';
 
 export const FTP_CURRENT = 220;
 export const FTP_TARGET = 250;
 export const PLAN_START = '2025-12-13';
 export const PLAN_END = '2026-03-07';
+const STRENGTH_A_EXERCISES: StrengthExercise[] = [
+  { name: 'Back Squat', sets: '4x4-6', notes: 'RPE 7-8 (ağır, kontrollü)' },
+  { name: 'Romanian Deadlift', sets: '3x6-8', notes: 'RPE 7-8 (hamstring/hip hinge)' },
+  { name: 'Bulgarian Split Squat', sets: '2-3x6-8/bacak', notes: 'RPE 7 (stabil, kontrollü)' },
+  { name: 'Seated Calf Raise', sets: '4x8-12', notes: 'Soleus odaklı (diz bükülü)' },
+  { name: 'Pallof Press', sets: '3x10-12/taraf', notes: 'Anti-rotation, kontrollü' },
+  { name: 'Ab Wheel', sets: '3x6-10', notes: 'Anti-extension, form bozulmadan' }
+];
+
+const STRENGTH_B_EXERCISES: StrengthExercise[] = [
+  { name: 'Hip Thrust', sets: '4x6-10', notes: 'RPE 7-8 (glute dominant)' },
+  { name: 'Single Leg Deadlift', sets: '3x8/bacak', notes: 'RPE 7 (denge + posterior chain)' },
+  { name: 'Step Ups', sets: '2x8-10/bacak', notes: 'RPE 6-7 (Cuma kalitesini bozmasın)' },
+  { name: 'Wide Row Machine', sets: '3x8-12', notes: 'Geniş çekiş, 1 sn sık' },
+  { name: 'Barbell Overhead Press', sets: '3x5-8', notes: 'Strict, RPE 6-7 (failure yok)' },
+  { name: 'Chest Press', sets: '2x8-12', notes: 'RPE 6-7 (failure yok)' },
+  { name: 'Face Pull', sets: '2x12-15', notes: 'Skapula + arka omuz' },
+  { name: 'Copenhagen Plank', sets: '3x20-40 sn/taraf', notes: 'Adductor + lateral core' },
+  { name: 'Standing Calf Raise', sets: '3x10-15', notes: 'Gastrocnemius (diz düz)' }
+];
 
 export const weekSummaries: WeekSummary[] = [
   { week: 1, phase: 'base', startDate: '2025-12-13', endDate: '2025-12-19', targetTSS: 300, targetHours: 5.5, strengthSessions: 2, isRecoveryWeek: false, focus: 'Adaptasyon, aerobik temel' },
@@ -68,15 +88,9 @@ export const workouts: Workout[] = [
     dayOfWeek: 'Pazartesi',
     type: 'strength_a',
     title: 'Ağırlık A - Temel Güç',
-    duration: 45,
-    description: 'Alt vücut ve core odaklı güç antrenmanı.',
-    strengthExercises: [
-      { name: 'Back Squat', sets: '4x6', notes: '%75-80 1RM' },
-      { name: 'Romanian Deadlift', sets: '3x8', notes: '%70 1RM' },
-      { name: 'Bulgarian Split Squat', sets: '3x8/bacak', notes: 'Orta ağırlık' },
-      { name: 'Plank', sets: '3x45sn', notes: 'Core aktivasyonu' },
-      { name: 'Dead Bug', sets: '3x10/taraf', notes: 'Kontrollü hareket' }
-    ],
+    duration: 60,
+    description: 'Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.',
+    strengthExercises: STRENGTH_A_EXERCISES,
     phase: 'base',
     week: 1,
     isRecoveryWeek: false
@@ -123,15 +137,9 @@ export const workouts: Workout[] = [
     dayOfWeek: 'Perşembe',
     type: 'strength_b',
     title: 'Ağırlık B - Fonksiyonel Güç',
-    duration: 40,
-    description: 'Tek bacak ve stabilite odaklı antrenman.',
-    strengthExercises: [
-      { name: 'Leg Press', sets: '4x8', notes: 'Ağır' },
-      { name: 'Single Leg Deadlift', sets: '3x8/bacak', notes: 'Denge odaklı' },
-      { name: 'Step Ups', sets: '3x10/bacak', notes: 'Yüksek step' },
-      { name: 'Side Plank', sets: '3x30sn/taraf', notes: '' },
-      { name: 'Hip Thrust', sets: '3x12', notes: 'Glute aktivasyonu' }
-    ],
+    duration: 60,
+    description: 'Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.',
+    strengthExercises: STRENGTH_B_EXERCISES,
     phase: 'base',
     week: 1,
     isRecoveryWeek: false
@@ -199,15 +207,9 @@ export const workouts: Workout[] = [
     dayOfWeek: 'Pazartesi',
     type: 'strength_a',
     title: 'Ağırlık A',
-    duration: 45,
-    description: 'Alt vücut ve core - hafif artış.',
-    strengthExercises: [
-      { name: 'Back Squat', sets: '4x6', notes: '%77-82 1RM (artış)' },
-      { name: 'Romanian Deadlift', sets: '3x8', notes: '%72 1RM' },
-      { name: 'Bulgarian Split Squat', sets: '3x8/bacak', notes: '' },
-      { name: 'Plank', sets: '3x50sn', notes: '' },
-      { name: 'Dead Bug', sets: '3x12/taraf', notes: '' }
-    ],
+    duration: 60,
+    description: 'Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.',
+    strengthExercises: STRENGTH_A_EXERCISES,
     phase: 'base',
     week: 2,
     isRecoveryWeek: false
@@ -253,15 +255,9 @@ export const workouts: Workout[] = [
     dayOfWeek: 'Perşembe',
     type: 'strength_b',
     title: 'Ağırlık B',
-    duration: 40,
-    description: 'Fonksiyonel güç antrenmanı.',
-    strengthExercises: [
-      { name: 'Leg Press', sets: '4x8', notes: 'Ağır' },
-      { name: 'Single Leg Deadlift', sets: '3x8/bacak', notes: '' },
-      { name: 'Step Ups', sets: '3x12/bacak', notes: '' },
-      { name: 'Side Plank', sets: '3x35sn/taraf', notes: '' },
-      { name: 'Hip Thrust', sets: '3x12', notes: '' }
-    ],
+    duration: 60,
+    description: 'Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.',
+    strengthExercises: STRENGTH_B_EXERCISES,
     phase: 'base',
     week: 2,
     isRecoveryWeek: false
@@ -320,15 +316,9 @@ export const workouts: Workout[] = [
     dayOfWeek: 'Pazartesi',
     type: 'strength_a',
     title: 'Ağırlık A',
-    duration: 45,
-    description: 'Son yoğun ağırlık haftası.',
-    strengthExercises: [
-      { name: 'Back Squat', sets: '4x5', notes: '%80-85 1RM (peak)' },
-      { name: 'Romanian Deadlift', sets: '3x6', notes: '%75 1RM' },
-      { name: 'Bulgarian Split Squat', sets: '3x8/bacak', notes: '' },
-      { name: 'Plank', sets: '3x60sn', notes: '' },
-      { name: 'Pallof Press', sets: '3x10/taraf', notes: '' }
-    ],
+    duration: 60,
+    description: 'Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.',
+    strengthExercises: STRENGTH_A_EXERCISES,
     phase: 'base',
     week: 3,
     isRecoveryWeek: false
@@ -384,14 +374,9 @@ export const workouts: Workout[] = [
     dayOfWeek: 'Cuma',
     type: 'strength_b',
     title: 'Ağırlık B',
-    duration: 40,
-    description: 'Hafta sonu recovery öncesi son ağırlık.',
-    strengthExercises: [
-      { name: 'Leg Press', sets: '4x6', notes: 'Ağır' },
-      { name: 'Single Leg Deadlift', sets: '3x8/bacak', notes: '' },
-      { name: 'Step Ups', sets: '3x12/bacak', notes: '' },
-      { name: 'Core Circuit', sets: '2 tur', notes: '' }
-    ],
+    duration: 60,
+    description: 'Glute dominant + tek bacak + üst sırt + itiş + adductor + calf. Cuma kalitesini korur.',
+    strengthExercises: STRENGTH_B_EXERCISES,
     phase: 'base',
     week: 3,
     isRecoveryWeek: false
@@ -547,13 +532,9 @@ export const workouts: Workout[] = [
     dayOfWeek: 'Pazartesi',
     type: 'strength_a',
     title: 'Ağırlık A - Build Phase',
-    duration: 40,
-    description: 'Azaltılmış hacim, korunan yoğunluk.',
-    strengthExercises: [
-      { name: 'Back Squat', sets: '3x5', notes: '%80-85 1RM' },
-      { name: 'Romanian Deadlift', sets: '3x6', notes: 'Ağır' },
-      { name: 'Core Circuit', sets: '2 tur', notes: '' }
-    ],
+    duration: 60,
+    description: 'Squat + hinge + tek bacak + core + soleus. Bisiklet performansı ve sağlamlık.',
+    strengthExercises: STRENGTH_A_EXERCISES,
     phase: 'build',
     week: 5,
     isRecoveryWeek: false
