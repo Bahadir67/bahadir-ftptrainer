@@ -83,7 +83,7 @@ export const workouts: Workout[] = [
       main: '45dk çok hafif @%50-60 FTP',
       cooldown: 'Yok'
     },
-    myWhooshWorkout: null,
+    myWhooshWorkout: undefined,
     phase: 'base',
     week: 1,
     isRecoveryWeek: false
