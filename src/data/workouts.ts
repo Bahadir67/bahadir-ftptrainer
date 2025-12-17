@@ -1024,6 +1024,7 @@ export const workouts: Workout[] = [
       main: '3x12dk @%88-93 FTP, 5dk dinlenme',
       cooldown: '12dk'
     },
+    myWhooshWorkout: '/zwo/2026-02-13-sweet-spot-kisa-75.zwo',
     phase: 'peak',
     week: 9,
     isRecoveryWeek: false

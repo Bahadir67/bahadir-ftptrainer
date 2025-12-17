@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workout_file>
+  <author>Bahadir FTPTrainer</author>
+  <name>2026-02-13 Sweet Spot (Kısa) (75m)</name>
+  <description>
+    15dk ısınma, 3x12dk @88-93% FTP (5dk kolay), +2dk Z2, 12dk soğuma. Toplam 75dk.
+  </description>
+  <sportType>bike</sportType>
+  <tags>
+    <tag name="FTP" />
+    <tag name="Sweet Spot" />
+    <tag name="Tempo/Threshold" />
+  </tags>
+  <workout>
+    <Warmup Duration="900" PowerLow="0.55" PowerHigh="0.75" />
+
+    <SteadyState Duration="720" Power="0.90" />
+    <SteadyState Duration="300" Power="0.60" />
+
+    <SteadyState Duration="720" Power="0.90" />
+    <SteadyState Duration="300" Power="0.60" />
+
+    <SteadyState Duration="720" Power="0.90" />
+
+    <SteadyState Duration="120" Power="0.65" />
+    <Cooldown Duration="720" PowerLow="0.55" PowerHigh="0.40" />
+  </workout>
+</workout_file>
