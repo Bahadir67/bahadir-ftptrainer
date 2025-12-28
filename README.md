@@ -1,6 +1,6 @@
 # 🚴 FTP Trainer - AI Bisiklet Antrenörü
 
-Claude Desktop ile entegre kişisel bisiklet antrenman sistemi. Strava, Garmin ve GitHub ile tam otomatik takip.
+Claude Desktop ile entegre kişisel bisiklet antrenman sistemi. Strava ve GitHub ile tam otomatik takip.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black)
@@ -20,14 +20,13 @@ Claude Desktop ile entegre kişisel bisiklet antrenman sistemi. Strava, Garmin v
 
 ### Claude Desktop Entegrasyonu
 - 🤖 **Günlük antrenör görüşmeleri**
-- 📊 **Otomatik veri toplama** (Strava + Garmin)
-- 🧠 **Recovery analizi ve karar verme**
+- 📊 **Otomatik veri toplama** (Strava)
+- 🧠 **Recovery analizi ve karar verme (manuel metriklerle)**
 - 💡 **Akıllı plan önerileri**
 - 🔄 **Otomatik plan güncelleme** (GitHub → Vercel)
 
 ### MCP Sunucuları
 - **Strava**: Aktivite verileri, TSS, performans
-- **Garmin**: Uyku, HRV proxy, stress, recovery
 - **GitHub**: Plan değişikliği ve otomasyon
 
 ---
@@ -37,9 +36,8 @@ Claude Desktop ile entegre kişisel bisiklet antrenman sistemi. Strava, Garmin v
 ### Gereksinimler
 
 - Node.js 20+
-- Python 3.11+ (Garmin MCP)
 - Claude Desktop
-- Strava, Garmin, GitHub hesapları
+- Strava, GitHub hesapları
 
 ### Kurulum
 
@@ -76,7 +74,7 @@ Günaydın, bugün 15 Aralık
 **Claude yapar**:
 1. 📊 Planı kontrol eder (`schedule.json`)
 2. 🏃 Strava aktivitelerini çeker
-3. 😴 Garmin recovery verilerini alır
+3. Recovery metriklerini kullanicidan alir
 4. 🧠 Recovery skoru hesaplar
 5. 💡 3 senaryo sunar:
    - ✅ Plana devam
@@ -122,7 +120,6 @@ bahadir-ftptrainer/
 ### AI & MCP
 - **Claude Desktop** - Ana antrenör
 - **Strava MCP** - Aktivite entegrasyonu
-- **Garmin MCP** - Recovery verileri
 - **GitHub MCP** - Plan yönetimi
 
 ---
@@ -168,7 +165,6 @@ MIT License - özgürce kullan, değiştir, paylaş!
 
 - **Claude Desktop** - AI antrenör platform
 - **Strava** - Aktivite takibi
-- **Garmin** - Recovery verileri
 - **Vercel** - Ücretsiz hosting
 - **Model Context Protocol** - MCP framework
 
@@ -187,3 +183,5 @@ MIT License - özgürce kullan, değiştir, paylaş!
 **Tarih**: Aralık 2025
 
 > "Train smart, recover smarter." 🚴💪
+
+

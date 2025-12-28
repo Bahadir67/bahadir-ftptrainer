@@ -8,7 +8,6 @@ Kişisel bisiklet antrenörü sistemi - Claude Desktop ile tam entegrasyon.
 
 ### Hesaplar
 - [ ] **Strava** hesabı (ücretsiz)
-- [ ] **Garmin Connect** hesabı (ücretsiz)
 - [ ] **GitHub** hesabı (ücretsiz)
 - [ ] **Vercel** hesabı (ücretsiz)
 - [ ] **Claude Desktop** (https://claude.ai/download)
@@ -16,8 +15,6 @@ Kişisel bisiklet antrenörü sistemi - Claude Desktop ile tam entegrasyon.
 ### Yazılımlar
 - [ ] **Node.js** 20+ (https://nodejs.org/)
 - [ ] **Git** (https://git-scm.com/)
-- [ ] **Python** 3.11+ (Garmin MCP için)
-- [ ] **uv** (Python paket yöneticisi)
 
 ---
 
@@ -77,6 +74,40 @@ Vercel URL'ini not et: `https://SENIN-PROJE-ADIN.vercel.app`
 
 ---
 
+## ?? VERCEL BACKEND + KV AYARLARI
+
+Bu projeyi tek bir Vercel uygulamasinda hem statik arayuz, hem de backend API olarak kullanacagiz.
+
+### 1. Vercel KV bagla
+
+Vercel panelinde **Storage -> KV** olustur ve projeye bagla. Vercel asagidaki env'leri otomatik ekler:
+- `KV_URL`
+- `KV_REST_API_URL`
+- `KV_REST_API_TOKEN`
+- `KV_REST_API_READ_ONLY_TOKEN`
+
+### 2. API key ve entegrasyon env'leri
+
+Vercel -> Settings -> Environment Variables altina ekle:
+
+```
+FTPTRAINER_API_KEY=strong-random-key
+STRAVA_CLIENT_ID=...
+STRAVA_CLIENT_SECRET=...
+STRAVA_ACCESS_TOKEN=...
+STRAVA_REFRESH_TOKEN=...
+STRAVA_EXPIRES_AT=...
+```
+
+Notlar:
+- Strava tokenlari yoksa `/api/strava/tokens` endpointi ile KV'ye yazabilirsin.
+
+### 3. OpenAPI spec
+
+Actions icin OpenAPI dosyasi:
+`https://SENIN-PROJE-ADIN.vercel.app/openapi.json`
+
+---
 ## 🔧 MCP SUNUCULARI KURULUMU
 
 ### A. Strava MCP
@@ -135,36 +166,6 @@ npm run build
 
 ---
 
-### B. Garmin MCP
-
-#### 1. Garmin MCP'yi Kur
-
-```bash
-# uv kur (Windows PowerShell - Admin):
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-# Proje dizini oluştur
-mkdir C:\Project1\GarminMCP
-cd C:\Project1\GarminMCP
-
-# GitHub'dan klonla
-git clone https://github.com/eddmann/garmin-connect-mcp.git .
-
-# Bağımlılıkları kur
-uv sync
-```
-
-#### 2. Garmin Credentials Ekle
-
-**`.env`** dosyası oluştur:
-
-```env
-GARMIN_EMAIL=senin-email@gmail.com
-GARMIN_PASSWORD=senin-garmin-sifresi
-```
-
----
-
 ### C. GitHub MCP
 
 #### 1. GitHub Personal Access Token Al
@@ -199,10 +200,6 @@ GARMIN_PASSWORD=senin-garmin-sifresi
         "STRAVA_ACCESS_TOKEN": "SENIN_ACCESS_TOKEN",
         "STRAVA_REFRESH_TOKEN": "SENIN_REFRESH_TOKEN"
       }
-    },
-    "garmin": {
-      "command": "uv",
-      "args": ["run", "--directory", "C:\\Project1\\GarminMCP", "garmin-connect-mcp"]
     },
     "github": {
       "command": "C:\\Program Files\\nodejs\\npx.cmd",
@@ -245,7 +242,6 @@ Strava'dan son 3 aktivitemi getir
 Çalışıyorsa ✅
 
 ```
-Garmin'den dünkü uyku verilerimi getir
 ```
 
 Çalışıyorsa ✅
@@ -277,7 +273,6 @@ Günaydın, bugün 15 Aralık
 Claude:
 1. Planı kontrol eder
 2. Strava aktivitelerini çeker
-3. Garmin recovery verilerini alır
 4. Değerlendirme yapar
 5. Öneri sunar
 
@@ -299,15 +294,12 @@ node
 > // Token yenileme kodu çalıştır
 ```
 
-### Garmin MCP hatası
 
 ```bash
 # Credentials kontrol et:
-cd C:\Project1\GarminMCP
 cat .env
 
 # Yeniden kur:
-uv sync
 ```
 
 ### GitHub MCP bağlanmıyor
@@ -330,7 +322,6 @@ vercel --prod --force
 ## 📚 EK KAYNAKLAR
 
 - **Strava API Docs**: https://developers.strava.com/
-- **Garmin Connect API**: https://github.com/eddmann/garmin-connect-mcp
 - **GitHub MCP**: https://github.com/github/github-mcp-server
 - **Claude Desktop**: https://claude.ai/download
 - **MCP Protocol**: https://modelcontextprotocol.io/
@@ -356,3 +347,6 @@ MIT License - Kendi projen için özgürce kullan, değiştir, paylaş!
 **Hazırlayan**: Claude Code + Eylül
 **Versiyon**: 1.0
 **Tarih**: Aralık 2025
+
+
+

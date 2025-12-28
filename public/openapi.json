@@ -1,0 +1,164 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "FTP Trainer Backend",
+    "version": "1.0.0",
+    "description": "Backend API for training program and Strava activities."
+  },
+  "servers": [
+    {
+      "url": "https://bahadir-ftptrainer.vercel.app"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "apiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      }
+    },
+    "schemas": {
+      "Program": {
+        "type": "object",
+        "properties": {
+          "ftp_current": { "type": "number" },
+          "ftp_target": { "type": "number" },
+          "plan_start": { "type": "string" },
+          "plan_end": { "type": "string" },
+          "generated_at": { "type": "string" },
+          "weeks": { "type": "array", "items": { "type": "object" } },
+          "workouts": { "type": "array", "items": { "type": "object" } }
+        }
+      }
+    }
+  },
+  "security": [
+    { "apiKey": [] }
+  ],
+  "paths": {
+    "/api/program": {
+      "get": {
+        "summary": "Get current training program",
+        "responses": {
+          "200": {
+            "description": "Program exists or not",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "exists": { "type": "boolean" },
+                    "program": { "$ref": "#/components/schemas/Program" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/program/create": {
+      "post": {
+        "summary": "Create program from default schedule or custom body",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "force": { "type": "boolean" },
+                  "program": { "$ref": "#/components/schemas/Program" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Program created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "created": { "type": "boolean" },
+                    "program": { "$ref": "#/components/schemas/Program" }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Program already exists"
+          }
+        }
+      }
+    },
+    "/api/program/day": {
+      "patch": {
+        "summary": "Update a workout by date",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": { "type": "string" },
+                  "patch": { "type": "object" },
+                  "workout": { "type": "object" }
+                },
+                "required": ["date"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Workout updated"
+          }
+        }
+      }
+    },
+    "/api/data/strava": {
+      "get": {
+        "summary": "Get Strava activities for a date range",
+        "parameters": [
+          { "name": "from", "in": "query", "required": true, "schema": { "type": "string" } },
+          { "name": "to", "in": "query", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Strava activities"
+          }
+        }
+      }
+    },
+    "/api/strava/tokens": {
+      "post": {
+        "summary": "Store Strava tokens in KV",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "access_token": { "type": "string" },
+                  "refresh_token": { "type": "string" },
+                  "expires_at": { "type": "number" }
+                },
+                "required": ["access_token", "refresh_token", "expires_at"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Stored" }
+        }
+      }
+    }
+  }
+}
