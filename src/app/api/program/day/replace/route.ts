@@ -35,7 +35,21 @@ function estimateIF(tss: number, duration: number) {
   return Math.sqrt(tss / (hours * 100));
 }
 
-function deriveType(tss: number, duration: number) {
+type WorkoutType =
+  | 'rest'
+  | 'recovery'
+  | 'z2_endurance'
+  | 'sweet_spot'
+  | 'threshold'
+  | 'vo2max'
+  | 'over_unders'
+  | 'strength_a'
+  | 'strength_b'
+  | 'strength_maintenance'
+  | 'ftp_test'
+  | 'race_simulation';
+
+function deriveType(tss: number, duration: number): WorkoutType {
   const intensityFactor = estimateIF(tss, duration);
   if (!Number.isFinite(intensityFactor)) {
     return 'recovery';
@@ -137,7 +151,7 @@ export async function PATCH(req: Request) {
   }
 
   const intensityFactor = estimateIF(tss, duration);
-  const type = (body?.type as string | undefined) ?? deriveType(tss, duration);
+  const type = (body?.type as WorkoutType | undefined) ?? deriveType(tss, duration);
   const detail = (body?.detail as WorkoutDetail | undefined) ?? buildDetail(type, duration);
   const title =
     (body?.title as string | undefined) ?? `${type.replace(/_/g, ' ')} ${duration}min`;
