@@ -184,34 +184,12 @@
     "/api/program/day/replace": {
       "patch": {
         "operationId": "replaceWorkout",
-        "x-openai-body-name": "body",
         "summary": "Replace a workout with a generated plan based on TSS/duration",
         "parameters": [
-          { "name": "date", "in": "query", "required": false, "schema": { "type": "string" } },
-          { "name": "tss", "in": "query", "required": false, "schema": { "type": "number" } },
+          { "name": "date", "in": "query", "required": true, "schema": { "type": "string" } },
+          { "name": "tss", "in": "query", "required": true, "schema": { "type": "number" } },
           { "name": "duration", "in": "query", "required": false, "schema": { "type": "number" } }
         ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "date": { "type": "string" },
-                  "tss": { "type": "number" },
-                  "duration": { "type": "number" },
-                  "type": { "type": "string" },
-                  "title": { "type": "string" },
-                  "description": { "type": "string" },
-                  "detail": { "type": "object" },
-                  "myWhooshWorkout": { "type": "string" }
-                },
-                "required": ["date", "tss"]
-              }
-            }
-          }
-        },
         "responses": {
           "200": { "description": "Workout replaced" },
           "400": { "description": "Invalid input" },
