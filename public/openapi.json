@@ -101,6 +101,7 @@
     "/api/program/day": {
       "patch": {
         "operationId": "updateProgramDay",
+        "x-openai-body-name": "body",
         "summary": "Update a workout by date",
         "requestBody": {
           "required": true,
