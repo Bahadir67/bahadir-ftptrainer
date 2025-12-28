@@ -29,12 +29,22 @@ function getZwiftRoute(type: string) {
   }
 }
 
+function estimateIF(tss: number, duration: number) {
+  const hours = duration / 60;
+  if (hours <= 0) return NaN;
+  return Math.sqrt(tss / (hours * 100));
+}
+
 function deriveType(tss: number, duration: number) {
-  if (tss >= 90 && duration <= 60) return 'vo2max';
-  if (tss >= 80) return 'threshold';
-  if (tss >= 65) return 'sweet_spot';
-  if (tss >= 45) return 'z2_endurance';
-  return 'recovery';
+  const intensityFactor = estimateIF(tss, duration);
+  if (!Number.isFinite(intensityFactor)) {
+    return 'recovery';
+  }
+  if (intensityFactor < 0.6) return 'recovery';
+  if (intensityFactor < 0.85) return 'z2_endurance';
+  if (intensityFactor < 0.95) return 'sweet_spot';
+  if (intensityFactor < 1.05) return 'threshold';
+  return 'vo2max';
 }
 
 function buildDetail(type: string, duration: number): WorkoutDetail {
@@ -126,12 +136,14 @@ export async function PATCH(req: Request) {
     );
   }
 
+  const intensityFactor = estimateIF(tss, duration);
   const type = (body?.type as string | undefined) ?? deriveType(tss, duration);
   const detail = (body?.detail as WorkoutDetail | undefined) ?? buildDetail(type, duration);
-  const title = (body?.title as string | undefined) ?? `${type.replace(/_/g, ' ')} ${duration}min`;
+  const title =
+    (body?.title as string | undefined) ?? `${type.replace(/_/g, ' ')} ${duration}min`;
   const description =
     (body?.description as string | undefined) ??
-    `Auto plan for ${duration} min, target TSS ${tss}.`;
+    `Auto plan for ${duration} min, target TSS ${tss} (IF ~${Number.isFinite(intensityFactor) ? intensityFactor.toFixed(2) : 'n/a'}).`;
   const myWhooshWorkout =
     (body?.myWhooshWorkout as string | undefined) ??
     getZwiftRoute(type) ??
@@ -151,5 +163,9 @@ export async function PATCH(req: Request) {
 
   await setProgram({ ...program, workouts: updatedWorkouts });
 
-  return NextResponse.json({ updated: true, workout: updatedWorkouts[workoutIndex] });
+  return NextResponse.json({
+    updated: true,
+    workout: updatedWorkouts[workoutIndex],
+    intensityFactor: Number.isFinite(intensityFactor) ? Number(intensityFactor.toFixed(2)) : null,
+  });
 }
