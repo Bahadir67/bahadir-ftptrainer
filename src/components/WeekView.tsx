@@ -1,17 +1,18 @@
 'use client';
 
-import { weekSummaries } from '@/data/workouts';
+import type { WeekSummary } from '@/types/workout';
 import { getPhaseColor } from '@/lib/utils';
 
 interface WeekViewProps {
   currentWeek: number;
   onWeekSelect: (week: number) => void;
+  weekSummaries: WeekSummary[];
 }
 
-export default function WeekView({ currentWeek, onWeekSelect }: WeekViewProps) {
+export default function WeekView({ currentWeek, onWeekSelect, weekSummaries }: WeekViewProps) {
   return (
     <div className="bg-white rounded-xl shadow-sm border p-4 mb-4">
-      <h2 className="text-lg font-semibold mb-3">📅 Haftalık Görünüm</h2>
+      <h2 className="text-lg font-semibold mb-3">?? Haftal?k G?r?n?m</h2>
 
       <div className="flex gap-1 overflow-x-auto pb-2">
         {weekSummaries.map((week) => (
@@ -29,7 +30,7 @@ export default function WeekView({ currentWeek, onWeekSelect }: WeekViewProps) {
             <div className={`w-2 h-2 rounded-full ${getPhaseColor(week.phase)} mb-1`} />
             <span className="text-sm font-medium">H{week.week}</span>
             <span className="text-xs text-gray-500">
-              {week.isRecoveryWeek ? '🔄' : `${week.targetHours}s`}
+              {week.isRecoveryWeek ? '??' : `${week.targetHours}s`}
             </span>
           </button>
         ))}
@@ -51,9 +52,9 @@ export default function WeekView({ currentWeek, onWeekSelect }: WeekViewProps) {
           </div>
           <p className="text-sm text-gray-600 mb-2">{weekSummaries[currentWeek - 1].focus}</p>
           <div className="flex gap-4 text-xs text-gray-500">
-            <span>🎯 TSS: {weekSummaries[currentWeek - 1].targetTSS}</span>
-            <span>⏱️ {weekSummaries[currentWeek - 1].targetHours} saat</span>
-            <span>🏋️ {weekSummaries[currentWeek - 1].strengthSessions}x</span>
+            <span>?? TSS: {weekSummaries[currentWeek - 1].targetTSS}</span>
+            <span>?? {weekSummaries[currentWeek - 1].targetHours} saat</span>
+            <span>??? {weekSummaries[currentWeek - 1].strengthSessions}x</span>
           </div>
         </div>
       )}
