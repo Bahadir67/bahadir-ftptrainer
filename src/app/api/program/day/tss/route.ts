@@ -27,7 +27,7 @@ export async function PATCH(req: Request) {
   }
 
   const program = await getProgram();
-  if (!program) {
+  if (!program || !Array.isArray(program.workouts)) {
     return NextResponse.json({ error: 'Program not found' }, { status: 404 });
   }
 
