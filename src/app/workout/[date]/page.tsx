@@ -1,11 +1,25 @@
-import { workouts, getWorkoutByDate, getWeekSummary } from '@/data/workouts';
+import fs from 'fs';
+import path from 'path';
+import { getProgram } from '@/lib/kv-store';
+import type { Program } from '@/types/program';
+import type { WeekSummary } from '@/types/workout';
 import WorkoutDetailClient from './WorkoutDetailClient';
 
-// Generate static params for all workout dates
-export function generateStaticParams() {
-  return workouts.map((workout) => ({
-    date: workout.date,
-  }));
+export const dynamic = 'force-dynamic';
+
+function loadDefaultProgram(): Program {
+  const filePath = path.join(process.cwd(), 'public', 'schedule.json');
+  const raw = fs.readFileSync(filePath, 'utf-8');
+  return JSON.parse(raw) as Program;
+}
+
+async function loadProgram(): Promise<Program> {
+  const program = await getProgram();
+  if (program && Array.isArray(program.workouts)) {
+    return program;
+  }
+
+  return loadDefaultProgram();
 }
 
 interface PageProps {
@@ -14,8 +28,11 @@ interface PageProps {
 
 export default async function WorkoutDetailPage({ params }: PageProps) {
   const { date } = await params;
-  const workout = getWorkoutByDate(date) || null;
-  const weekSummary = workout ? getWeekSummary(workout.week) || null : null;
+  const program = await loadProgram();
+  const workout = program.workouts.find((item) => item.date === date) || null;
+  const weekSummary: WeekSummary | null = workout
+    ? program.weeks.find((week) => week.week === workout.week) ?? null
+    : null;
 
   return (
     <WorkoutDetailClient
