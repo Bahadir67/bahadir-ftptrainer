@@ -164,6 +164,23 @@
           "200": { "description": "Stored" }
         }
       }
+    },
+    "/api/time": {
+      "get": {
+        "operationId": "getServerTime",
+        "summary": "Get current time for a timezone",
+        "parameters": [
+          { "name": "tz", "in": "query", "required": false, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current time payload"
+          },
+          "400": {
+            "description": "Invalid timezone"
+          }
+        }
+      }
     }
   }
 }
