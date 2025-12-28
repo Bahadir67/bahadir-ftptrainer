@@ -39,6 +39,7 @@
   "paths": {
     "/api/program": {
       "get": {
+        "operationId": "getProgram",
         "summary": "Get current training program",
         "responses": {
           "200": {
@@ -60,6 +61,7 @@
     },
     "/api/program/create": {
       "post": {
+        "operationId": "createProgram",
         "summary": "Create program from default schedule or custom body",
         "requestBody": {
           "required": false,
@@ -98,6 +100,7 @@
     },
     "/api/program/day": {
       "patch": {
+        "operationId": "updateProgramDay",
         "summary": "Update a workout by date",
         "requestBody": {
           "required": true,
@@ -124,6 +127,7 @@
     },
     "/api/data/strava": {
       "get": {
+        "operationId": "getStravaActivities",
         "summary": "Get Strava activities for a date range",
         "parameters": [
           { "name": "from", "in": "query", "required": true, "schema": { "type": "string" } },
@@ -138,6 +142,7 @@
     },
     "/api/strava/tokens": {
       "post": {
+        "operationId": "storeStravaTokens",
         "summary": "Store Strava tokens in KV",
         "requestBody": {
           "required": true,
