@@ -181,6 +181,39 @@
         }
       }
     },
+    "/api/program/day/replace": {
+      "patch": {
+        "operationId": "replaceWorkout",
+        "x-openai-body-name": "body",
+        "summary": "Replace a workout with a generated plan based on TSS/duration",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": { "type": "string" },
+                  "tss": { "type": "number" },
+                  "duration": { "type": "number" },
+                  "type": { "type": "string" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string" },
+                  "detail": { "type": "object" },
+                  "myWhooshWorkout": { "type": "string" }
+                },
+                "required": ["date", "tss"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Workout replaced" },
+          "400": { "description": "Invalid input" },
+          "404": { "description": "Workout not found" }
+        }
+      }
+    },
     "/api/time": {
       "get": {
         "operationId": "getServerTime",
