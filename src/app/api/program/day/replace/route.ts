@@ -119,9 +119,11 @@ export async function PATCH(req: Request) {
     return authResponse;
   }
 
+  const { searchParams } = new URL(req.url);
   const body = await req.json().catch(() => null);
-  const date = body?.date as string | undefined;
-  const tss = Number(body?.tss);
+  const date =
+    (body?.date as string | undefined) ?? searchParams.get('date') ?? undefined;
+  const tss = Number(body?.tss ?? searchParams.get('tss'));
 
   if (!date || !Number.isFinite(tss)) {
     return NextResponse.json(
@@ -141,7 +143,7 @@ export async function PATCH(req: Request) {
   }
 
   const current = program.workouts[workoutIndex];
-  const duration = Number(body?.duration ?? current.duration);
+  const duration = Number(body?.duration ?? searchParams.get('duration') ?? current.duration);
 
   if (!Number.isFinite(duration) || duration <= 0) {
     return NextResponse.json(
