@@ -84,7 +84,7 @@ export default function Header({ workouts, ftpTarget, totalWeeks }: HeaderProps)
           </div>
           <div>
             <div className="flex justify-between text-xs text-gray-600 mb-1">
-              <span>FTP Hedefi ({currentFtp}W -> {ftpTarget}W)</span>
+              <span>FTP Hedefi ({currentFtp}W to {ftpTarget}W)</span>
               <span>{Math.max(0, progressToTarget)}%</span>
             </div>
             <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
