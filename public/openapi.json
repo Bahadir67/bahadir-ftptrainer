@@ -166,6 +166,21 @@
         }
       }
     },
+    "/api/program/day/tss": {
+      "patch": {
+        "operationId": "updateWorkoutTss",
+        "summary": "Quick update of workout TSS by date",
+        "parameters": [
+          { "name": "date", "in": "query", "required": true, "schema": { "type": "string" } },
+          { "name": "tss", "in": "query", "required": true, "schema": { "type": "number" } }
+        ],
+        "responses": {
+          "200": { "description": "TSS updated" },
+          "400": { "description": "Invalid input" },
+          "404": { "description": "Workout not found" }
+        }
+      }
+    },
     "/api/time": {
       "get": {
         "operationId": "getServerTime",
