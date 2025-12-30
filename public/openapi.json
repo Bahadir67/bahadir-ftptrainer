@@ -102,7 +102,7 @@
       "patch": {
         "operationId": "updateProgramDay",
         "x-openai-body-name": "body",
-        "summary": "Update a workout by date",
+        "summary": "Update a workout by date (requires patch or workout)",
         "requestBody": {
           "required": true,
           "content": {
@@ -114,7 +114,32 @@
                   "patch": { "type": "object" },
                   "workout": { "type": "object" }
                 },
-                "required": ["date"]
+                "required": ["date"],
+                "oneOf": [
+                  { "required": ["patch"] },
+                  { "required": ["workout"] }
+                ]
+              },
+              "examples": {
+                "patch": {
+                  "value": { "date": "2025-12-30", "patch": { "duration": 75, "description": "Updated" } }
+                },
+                "workout": {
+                  "value": {
+                    "date": "2025-12-30",
+                    "workout": {
+                      "date": "2025-12-30",
+                      "dayOfWeek": "Salı",
+                      "type": "sweet_spot",
+                      "title": "Sweet Spot",
+                      "duration": 65,
+                      "description": "...",
+                      "phase": "base",
+                      "week": 3,
+                      "isRecoveryWeek": false
+                    }
+                  }
+                }
               }
             }
           }
@@ -122,6 +147,12 @@
         "responses": {
           "200": {
             "description": "Workout updated"
+          },
+          "400": {
+            "description": "patch or workout is required"
+          },
+          "404": {
+            "description": "Workout not found"
           }
         }
       }
@@ -169,27 +200,44 @@
     "/api/program/day/tss": {
       "patch": {
         "operationId": "updateWorkoutTss",
-        "summary": "Quick update of workout TSS by date",
-        "parameters": [
-          { "name": "date", "in": "query", "required": true, "schema": { "type": "string" } },
-          { "name": "tss", "in": "query", "required": true, "schema": { "type": "number" } }
-        ],
+        "summary": "Deprecated: TSS updates are disabled",
+        "deprecated": true,
         "responses": {
-          "200": { "description": "TSS updated" },
-          "400": { "description": "Invalid input" },
-          "404": { "description": "Workout not found" }
+          "410": { "description": "TSS updates are disabled" }
         }
       }
     },
     "/api/program/day/replace": {
       "patch": {
         "operationId": "replaceWorkout",
-        "summary": "Replace a workout with a generated plan based on TSS/duration",
-        "parameters": [
-          { "name": "date", "in": "query", "required": true, "schema": { "type": "string" } },
-          { "name": "tss", "in": "query", "required": true, "schema": { "type": "number" } },
-          { "name": "duration", "in": "query", "required": false, "schema": { "type": "number" } }
-        ],
+        "x-openai-body-name": "body",
+        "summary": "Replace a workout with generated plan or full replacement",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": { "type": "string" },
+                  "workout": { "type": "object" },
+                  "tss": { "type": "number" },
+                  "duration": { "type": "number" },
+                  "type": { "type": "string" },
+                  "title": { "type": "string" },
+                  "description": { "type": "string" },
+                  "detail": { "type": "object" },
+                  "myWhooshWorkout": { "type": "string" }
+                },
+                "required": ["date"],
+                "oneOf": [
+                  { "required": ["workout"] },
+                  { "required": ["tss"] }
+                ]
+              }
+            }
+          }
+        },
         "responses": {
           "200": { "description": "Workout replaced" },
           "400": { "description": "Invalid input" },
