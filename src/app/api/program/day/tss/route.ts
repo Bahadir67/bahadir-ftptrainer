@@ -10,11 +10,13 @@ export async function PATCH(req: Request) {
     return authResponse;
   }
 
+  const { searchParams } = new URL(req.url);
   const body = await req.json().catch(() => null);
-  const date = body?.date as string | undefined;
-  const tss = body?.tss as number | undefined;
+  const date = (body?.date as string | undefined) ?? searchParams.get('date') ?? undefined;
+  const tssValue = body?.tss ?? searchParams.get('tss');
+  const tss = Number(tssValue);
 
-  if (!date || typeof tss !== 'number') {
+  if (!date || !Number.isFinite(tss)) {
     return NextResponse.json(
       { error: 'date and tss are required' },
       { status: 400 }
