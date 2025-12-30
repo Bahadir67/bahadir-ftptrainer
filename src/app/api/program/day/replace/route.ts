@@ -16,11 +16,11 @@ type WorkoutDetail = {
 
 const INTENSITY_WARMUP = [
   'Isınma:',
-  '0:00–2:00 → Z1 (%50–55 FTP)',
-  '2:00–6:00 → Z2 (%60–70 FTP)',
-  '6:00–7:30 → Z3 (%75–80 FTP)',
-  '7:30–8:30 → Z3–Z4 (%85–90 FTP)',
-  '8:30–10:00 → Z1–Z2 (%50–60 FTP)',
+  '2:00  → Z1 (%50–55 FTP)',
+  '4:00  → Z2 (%60–70 FTP)',
+  '01:30 → Z3 (%75–80 FTP)',
+  '01:00 → Z3–Z4 (%85–90 FTP)',
+  '1:30  → Z1–Z2 (%50–60 FTP)',
 ].join('\n');
 
 function useIntensityWarmup(type: string): boolean {
