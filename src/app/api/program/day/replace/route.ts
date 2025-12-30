@@ -15,7 +15,7 @@ type WorkoutDetail = {
 };
 
 const INTENSITY_WARMUP = [
-  'Isınma:',
+  'Isınma',
   '2:00  → Z1 (%50–55 FTP)',
   '4:00  → Z2 (%60–70 FTP)',
   '01:30 → Z3 (%75–80 FTP)',
