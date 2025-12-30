@@ -143,7 +143,7 @@ export default function WorkoutDetailClient({ workout, weekSummary, date }: Prop
             <div className="space-y-4">
               <div className="bg-green-50 rounded-lg p-4">
                 <h3 className="font-medium text-green-800 mb-1">🔥 Isınma</h3>
-                <p className="text-green-700">{workout.detail.warmup}</p>
+                <p className="text-green-700 whitespace-pre-line">{workout.detail.warmup}</p>
               </div>
 
               <div className="bg-orange-50 rounded-lg p-4">
