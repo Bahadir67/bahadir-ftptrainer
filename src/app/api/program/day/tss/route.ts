@@ -10,24 +10,19 @@ export async function PATCH(req: Request) {
     return authResponse;
   }
 
-  const { searchParams } = new URL(req.url);
-  const date = searchParams.get('date');
-  const tssParam = searchParams.get('tss');
+  const body = await req.json().catch(() => null);
+  const date = body?.date as string | undefined;
+  const tss = body?.tss as number | undefined;
 
-  if (!date || !tssParam) {
+  if (!date || typeof tss !== 'number') {
     return NextResponse.json(
-      { error: 'date and tss query parameters are required' },
+      { error: 'date and tss are required' },
       { status: 400 }
     );
   }
 
-  const tss = Number(tssParam);
-  if (!Number.isFinite(tss)) {
-    return NextResponse.json({ error: 'tss must be a number' }, { status: 400 });
-  }
-
   const program = await getProgram();
-  if (!program || !Array.isArray(program.workouts)) {
+  if (!program) {
     return NextResponse.json({ error: 'Program not found' }, { status: 404 });
   }
 
@@ -36,13 +31,12 @@ export async function PATCH(req: Request) {
     return NextResponse.json({ error: 'Workout not found' }, { status: 404 });
   }
 
+  const current = program.workouts[workoutIndex];
+  const updated = { ...current, tss };
   const updatedWorkouts = [...program.workouts];
-  updatedWorkouts[workoutIndex] = {
-    ...updatedWorkouts[workoutIndex],
-    tss,
-  };
+  updatedWorkouts[workoutIndex] = updated;
 
   await setProgram({ ...program, workouts: updatedWorkouts });
 
-  return NextResponse.json({ updated: true, date, tss });
+  return NextResponse.json({ updated: true, workout: updated });
 }
