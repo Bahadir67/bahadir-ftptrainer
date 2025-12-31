@@ -13,6 +13,15 @@ function normalizeDate(value?: string | null) {
   return value && value.trim().length > 0 ? value : null;
 }
 
+function getDayOfWeek(date: string) {
+  const day = new Intl.DateTimeFormat('tr-TR', {
+    weekday: 'long',
+    timeZone: 'Europe/Istanbul',
+  }).format(new Date(`${date}T12:00:00Z`));
+
+  return day.charAt(0).toUpperCase() + day.slice(1);
+}
+
 export async function PATCH(req: Request) {
   const authResponse = ensureApiKey(req);
   if (authResponse) {
@@ -56,8 +65,16 @@ export async function PATCH(req: Request) {
   const workoutB = program.workouts[indexB];
 
   const updatedWorkouts = [...program.workouts];
-  updatedWorkouts[indexA] = { ...workoutB, date: dateA };
-  updatedWorkouts[indexB] = { ...workoutA, date: dateB };
+  updatedWorkouts[indexA] = {
+    ...workoutB,
+    date: dateA,
+    dayOfWeek: getDayOfWeek(dateA),
+  };
+  updatedWorkouts[indexB] = {
+    ...workoutA,
+    date: dateB,
+    dayOfWeek: getDayOfWeek(dateB),
+  };
 
   await setProgram({ ...program, workouts: updatedWorkouts });
 
