@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { ensureApiKey } from '@/lib/api-auth';
 import { getProgram, setProgram } from '@/lib/kv-store';
+import type { WeekSummary, Workout } from '@/types/workout';
 
 export const runtime = 'nodejs';
 
@@ -13,6 +14,10 @@ function normalizeDate(value?: string | null) {
   return value && value.trim().length > 0 ? value : null;
 }
 
+function parseDate(value: string) {
+  return new Date(`${value}T00:00:00Z`);
+}
+
 function getDayOfWeek(date: string) {
   const day = new Intl.DateTimeFormat('tr-TR', {
     weekday: 'long',
@@ -20,6 +25,33 @@ function getDayOfWeek(date: string) {
   }).format(new Date(`${date}T12:00:00Z`));
 
   return day.charAt(0).toUpperCase() + day.slice(1);
+}
+
+function findWeekForDate(weeks: WeekSummary[], date: string) {
+  const target = parseDate(date).getTime();
+  return (
+    weeks.find((week) => {
+      const start = parseDate(week.startDate).getTime();
+      const end = parseDate(week.endDate).getTime();
+      return target >= start && target <= end;
+    }) ?? null
+  );
+}
+
+function applyDateMetadata(
+  workout: Workout,
+  date: string,
+  weeks: WeekSummary[]
+) {
+  const weekSummary = findWeekForDate(weeks, date);
+  return {
+    ...workout,
+    date,
+    dayOfWeek: getDayOfWeek(date),
+    week: weekSummary?.week ?? workout.week,
+    phase: weekSummary?.phase ?? workout.phase,
+    isRecoveryWeek: weekSummary?.isRecoveryWeek ?? workout.isRecoveryWeek,
+  };
 }
 
 export async function PATCH(req: Request) {
@@ -65,16 +97,16 @@ export async function PATCH(req: Request) {
   const workoutB = program.workouts[indexB];
 
   const updatedWorkouts = [...program.workouts];
-  updatedWorkouts[indexA] = {
-    ...workoutB,
-    date: dateA,
-    dayOfWeek: getDayOfWeek(dateA),
-  };
-  updatedWorkouts[indexB] = {
-    ...workoutA,
-    date: dateB,
-    dayOfWeek: getDayOfWeek(dateB),
-  };
+  updatedWorkouts[indexA] = applyDateMetadata(
+    workoutB,
+    dateA,
+    program.weeks
+  );
+  updatedWorkouts[indexB] = applyDateMetadata(
+    workoutA,
+    dateB,
+    program.weeks
+  );
 
   await setProgram({ ...program, workouts: updatedWorkouts });
 
