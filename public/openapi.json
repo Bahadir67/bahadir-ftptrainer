@@ -245,6 +245,86 @@
         }
       }
     },
+    "/api/program/day/update": {
+      "patch": {
+        "operationId": "updateProgramDayChanges",
+        "x-openai-body-name": "body",
+        "summary": "Update a workout by date using a changes object",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": { "type": "string" },
+                  "changes": { "type": "object" }
+                },
+                "required": ["date", "changes"]
+              },
+              "examples": {
+                "update": {
+                  "value": {
+                    "date": "2025-12-31",
+                    "changes": {
+                      "title": "FTP Test",
+                      "description": "Recovery fazi sonunda FTP degerlendirmesi.",
+                      "duration": 60,
+                      "tss": 80,
+                      "detail": {
+                        "warmup": "10dk @55%, 10dk @65%, 5dk @75%, 2x1dk @100% / 1dk @50%, 5dk @50%",
+                        "main": "20dk @105% FTP",
+                        "cooldown": "5dk @60%, 5dk @50%, 5dk @40%"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Workout updated" },
+          "400": { "description": "date and changes are required" },
+          "404": { "description": "Workout not found" }
+        }
+      }
+    },
+    "/api/program/day/swap": {
+      "patch": {
+        "operationId": "swapProgramDays",
+        "x-openai-body-name": "body",
+        "summary": "Swap workouts between two dates",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dateA": { "type": "string" },
+                  "dateB": { "type": "string" }
+                },
+                "required": ["dateA", "dateB"]
+              },
+              "examples": {
+                "swap": {
+                  "value": {
+                    "dateA": "2025-12-31",
+                    "dateB": "2026-01-01"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Workouts swapped" },
+          "400": { "description": "dateA and dateB are required" },
+          "404": { "description": "Workout not found" }
+        }
+      }
+    },
     "/api/data/strava": {
       "get": {
         "operationId": "getStravaActivities",
