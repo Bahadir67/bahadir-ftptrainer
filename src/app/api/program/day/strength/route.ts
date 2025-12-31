@@ -45,7 +45,7 @@ export async function PATCH(req: Request) {
     description: body.description ?? current.description,
     duration: body.duration ?? current.duration,
     strengthExercises: body.exercises,
-    tss: current.tss ?? null,
+    tss: current.tss,
   };
 
   const updatedWorkouts = [...program.workouts];
