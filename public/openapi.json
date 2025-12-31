@@ -3,7 +3,49 @@
   "info": {
     "title": "FTP Trainer Backend",
     "version": "1.0.0",
-    "description": "Backend API for training program and Strava activities."
+    "description": "Backend API for training program and Strava activities.",
+    "x-operationId-note": "operationId is an internal label; always use the literal path keys under `paths` as the URL."
+  },
+  "x-agent-rules": {
+    "general": [
+      "Use only the literal path keys under `paths` for URLs; never derive URLs from operationId.",
+      "When user asks for analysis, call tools first without extra questions.",
+      "Always start each conversation by calling getServerTime with tz=Europe/Istanbul."
+    ],
+    "time": [
+      "Call getServerTime.",
+      "Set today's date in YYYY-MM-DD.",
+      "If 'yesterday' is needed, subtract 1 day from today."
+    ],
+    "program": [
+      "Call getProgram to fetch the program.",
+      "If program is missing, ask for confirmation; on approval, call createProgram.",
+      "If program exists, find today's workout by matching workouts.date."
+    ],
+    "strava": [
+      "If user says 'dünkü antrenmanı analiz et', call getStravaActivities with from=yesterday, to=today.",
+      "If user says 'son 2 hafta', call getStravaActivities with from=today-14, to=today.",
+      "If multiple activities exist, analyze the longest/most recent and present options."
+    ],
+    "health": [
+      "Health metrics (sleep, HRV, body battery, stress) must be provided by the user.",
+      "If missing, ask: 'uyku skoru, HRV, body battery, stres değerlerini paylaşır mısın?'"
+    ],
+    "analysis": [
+      "Give a short summary first: total duration, TSS/intensity, trend.",
+      "Then compare plan vs actual.",
+      "Then give recommendations and offer plan updates if needed."
+    ],
+    "updates": [
+      "If user says 'değiştir', call updateProgramDay.",
+      "Before any update, ask for explicit confirmation.",
+      "Before updating, call getProgram and read today's workout.",
+      "When calling updateProgramDay, send only a patch (do not send full workout)."
+    ],
+    "language": [
+      "Reply in Turkish.",
+      "Keep responses short, clear, and practical."
+    ]
   },
   "servers": [
     {
@@ -51,6 +93,28 @@
                   "properties": {
                     "exists": { "type": "boolean" },
                     "program": { "$ref": "#/components/schemas/Program" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/program/public": {
+      "get": {
+        "operationId": "getProgramPublic",
+        "summary": "Get program from KV or fallback to default schedule",
+        "responses": {
+          "200": {
+            "description": "Program from KV or default schedule",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "program": { "$ref": "#/components/schemas/Program" },
+                    "source": { "type": "string" }
                   }
                 }
               }
@@ -157,6 +221,30 @@
         }
       }
     },
+    "/api/chat": {
+      "post": {
+        "operationId": "postChatMessage",
+        "summary": "Append a message to conversation log",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": { "type": "string" }
+                },
+                "required": ["message"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Message stored" },
+          "400": { "description": "Message is required" }
+        }
+      }
+    },
     "/api/data/strava": {
       "get": {
         "operationId": "getStravaActivities",
@@ -169,6 +257,16 @@
           "200": {
             "description": "Strava activities"
           }
+        }
+      }
+    },
+    "/api/data/aggregate": {
+      "get": {
+        "operationId": "getAggregateData",
+        "summary": "Deprecated: aggregate endpoint disabled",
+        "deprecated": true,
+        "responses": {
+          "410": { "description": "Aggregate endpoint disabled" }
         }
       }
     },
