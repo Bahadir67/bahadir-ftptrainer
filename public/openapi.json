@@ -563,30 +563,6 @@
           }
         }
       }
-    }
-    "/api/chat": {
-      "post": {
-        "operationId": "postChatMessage",
-        "summary": "Append a message to conversation log",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "message": { "type": "string" }
-                },
-                "required": ["message"]
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": { "description": "Message stored" },
-          "400": { "description": "Message is required" }
-        }
-      }
     },
     "/api/program/day/update": {
       "patch": {
