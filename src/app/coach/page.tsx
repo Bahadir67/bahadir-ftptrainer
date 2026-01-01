@@ -5,35 +5,7 @@ import {
   LineChart, Line, BarChart, Bar, AreaChart, Area,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
-
-type ChartData = {
-  type: 'line' | 'bar' | 'area';
-  title: string;
-  data: any[];
-  dataKeys: { key: string; color: string; name?: string }[];
-  xAxisKey: string;
-};
-
-type Message = {
-  id: number;
-  role: 'user' | 'assistant';
-  content: string;
-  timestamp: string;
-  chart?: ChartData;
-};
-
-type DashboardData = {
-  title: string;
-  duration: string;
-  tss: number;
-  type: string;
-  status: string;
-};
-
-type ConversationData = {
-  messages: Message[];
-  dashboard: DashboardData;
-};
+import type { ChartData, ConversationData } from '../../types/conversation';
 
 // Grafik Bileşeni (Ayrı tanımlandı, gereksiz render önlemek için)
 const ChartComponent = ({ chart }: { chart: ChartData }) => {
@@ -92,7 +64,7 @@ export default function CoachPage() {
     let isMounted = true;
     const fetchData = async () => {
       try {
-        const res = await fetch('/conversation.json?t=' + new Date().getTime());
+        const res = await fetch('/api/conversation?t=' + new Date().getTime());
         const json = await res.json();
         
         if (!isMounted) return;
