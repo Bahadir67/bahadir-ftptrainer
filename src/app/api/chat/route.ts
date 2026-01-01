@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { appendConversationMessage, buildConversationContext } from '../../../lib/kv-store';
+import type { ConversationMessage } from '../../../types/conversation';
 
 export async function POST(req: Request) {
   try {
@@ -11,27 +11,21 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Message is required' }, { status: 400 });
     }
 
-    const filePath = path.join(process.cwd(), 'public', 'conversation.json');
-    
-    // Read existing file
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const data = JSON.parse(fileContent);
+    const now = new Date();
+    const timestamp = now.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
 
-    // Create new message object
-    const newMessage = {
-      id: data.messages.length + 1,
+    const newMessage: ConversationMessage = {
+      id: Date.now(),
       role: 'user',
       content: message,
-      timestamp: new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' })
+      timestamp,
+      createdAt: now.toISOString()
     };
 
-    // Add to messages
-    data.messages.push(newMessage);
+    const messages = await appendConversationMessage(newMessage);
+    const context = await buildConversationContext();
 
-    // Write back to file
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-
-    return NextResponse.json({ success: true, data });
+    return NextResponse.json({ success: true, data: { messages }, context });
   } catch (error) {
     console.error('API Error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
