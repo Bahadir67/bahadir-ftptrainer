@@ -16,12 +16,21 @@ const CONVERSATION_DAILY_SUMMARY_KEY = 'conversation:summary:daily';
 const CONVERSATION_WEEKLY_SUMMARY_KEY = 'conversation:summary:weekly';
 const CONVERSATION_MEMORY_KEY = 'conversation:memory';
 const CONVERSATION_DASHBOARD_KEY = 'conversation:dashboard';
+const HEALTH_DAILY_PREFIX = 'health:daily:';
+const HEALTH_DAILY_LATEST_KEY = 'health:daily:latest';
 
 export interface StravaTokens {
   access_token: string;
   refresh_token: string;
   expires_at: number;
 }
+
+export type DailyHealth = {
+  date: string;
+  metrics: Record<string, number | string | null>;
+  source?: string;
+  createdAt: string;
+};
 
 export async function getProgram(): Promise<Program | null> {
   return kv.get<Program>(PROGRAM_KEY);
@@ -68,6 +77,19 @@ export async function getConversationMemory(): Promise<string | null> {
 
 export async function setConversationMemory(memory: string): Promise<void> {
   await kv.set(CONVERSATION_MEMORY_KEY, memory);
+}
+
+export async function setDailyHealth(entry: DailyHealth): Promise<void> {
+  await kv.set(`${HEALTH_DAILY_PREFIX}${entry.date}`, entry);
+  await kv.set(HEALTH_DAILY_LATEST_KEY, entry);
+}
+
+export async function getDailyHealth(date: string): Promise<DailyHealth | null> {
+  return kv.get<DailyHealth>(`${HEALTH_DAILY_PREFIX}${date}`);
+}
+
+export async function getLatestDailyHealth(): Promise<DailyHealth | null> {
+  return kv.get<DailyHealth>(HEALTH_DAILY_LATEST_KEY);
 }
 
 export async function getDailySummaryCollection(): Promise<SummaryCollection<DailySummaryEntry>> {

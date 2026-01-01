@@ -162,6 +162,16 @@
           "updatedAt": { "type": "string" }
         },
         "required": ["entries", "updatedAt"]
+      },
+      "DailyHealth": {
+        "type": "object",
+        "properties": {
+          "date": { "type": "string" },
+          "metrics": { "type": "object" },
+          "source": { "type": "string" },
+          "createdAt": { "type": "string" }
+        },
+        "required": ["date", "metrics", "createdAt"]
       }
     }
   },
@@ -797,6 +807,57 @@
           "400": {
             "description": "Invalid timezone"
           }
+        }
+      }
+    },
+    "/api/health/daily": {
+      "get": {
+        "operationId": "getDailyHealth",
+        "summary": "Get latest daily health or by date",
+        "parameters": [
+          { "name": "date", "in": "query", "required": false, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Daily health entry",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "entry": { "$ref": "#/components/schemas/DailyHealth" }
+                  }
+                }
+              }
+            }
+          },
+          "404": { "description": "Not found" }
+        }
+      },
+      "post": {
+        "operationId": "storeDailyHealth",
+        "x-openai-body-name": "body",
+        "summary": "Store a daily health payload",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "date": { "type": "string" },
+                  "metrics": { "type": "object" },
+                  "source": { "type": "string" },
+                  "includeInMemory": { "type": "boolean" }
+                },
+                "required": ["date", "metrics"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Stored" },
+          "400": { "description": "Invalid input" }
         }
       }
     }
