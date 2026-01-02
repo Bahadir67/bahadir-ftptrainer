@@ -25,9 +25,35 @@ export interface StravaTokens {
   expires_at: number;
 }
 
+const HEALTH_METRICS = [
+  'steps',
+  'calories',
+  'nutritionCalories',
+  'distance',
+  'restingHr',
+  'avgHr',
+  'maxHr',
+  'hrv',
+  'sleepHours',
+  'sleepAvgHr',
+  'weight',
+  'bodyFat',
+  'vo2Max',
+  'spo2',
+  'exerciseDuration',
+  'avgSpeed',
+  'avgPower',
+  'energyScore',
+  'bodyBattery'
+] as const;
+
+export type HealthMetricKey = (typeof HEALTH_METRICS)[number];
+export type DailyHealthMetrics = Partial<Record<HealthMetricKey, number | null>>;
+
 export type DailyHealth = {
   date: string;
-  metrics: Record<string, number | string | null>;
+  timeOfDay: 'morning' | 'afternoon';
+  metrics: DailyHealthMetrics;
   source?: string;
   createdAt: string;
 };

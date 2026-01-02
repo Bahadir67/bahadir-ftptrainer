@@ -167,11 +167,36 @@
         "type": "object",
         "properties": {
           "date": { "type": "string" },
-          "metrics": { "type": "object" },
+          "timeOfDay": { "type": "string", "enum": ["morning", "afternoon"] },
+          "metrics": {
+            "type": "object",
+            "properties": {
+              "steps": { "type": ["number", "null"] },
+              "calories": { "type": ["number", "null"] },
+              "nutritionCalories": { "type": ["number", "null"] },
+              "distance": { "type": ["number", "null"] },
+              "restingHr": { "type": ["number", "null"] },
+              "avgHr": { "type": ["number", "null"] },
+              "maxHr": { "type": ["number", "null"] },
+              "hrv": { "type": ["number", "null"] },
+              "sleepHours": { "type": ["number", "null"] },
+              "sleepAvgHr": { "type": ["number", "null"] },
+              "weight": { "type": ["number", "null"] },
+              "bodyFat": { "type": ["number", "null"] },
+              "vo2Max": { "type": ["number", "null"] },
+              "spo2": { "type": ["number", "null"] },
+              "exerciseDuration": { "type": ["number", "null"] },
+              "avgSpeed": { "type": ["number", "null"] },
+              "avgPower": { "type": ["number", "null"] },
+              "energyScore": { "type": ["number", "null"] },
+              "bodyBattery": { "type": ["number", "null"] }
+            },
+            "additionalProperties": false
+          },
           "source": { "type": "string" },
           "createdAt": { "type": "string" }
         },
-        "required": ["date", "metrics", "createdAt"]
+        "required": ["date", "timeOfDay", "metrics", "createdAt"]
       }
     }
   },
@@ -846,11 +871,36 @@
                 "type": "object",
                 "properties": {
                   "date": { "type": "string" },
-                  "metrics": { "type": "object" },
+                  "timeOfDay": { "type": "string", "enum": ["morning", "afternoon"] },
+                  "metrics": {
+                    "type": "object",
+                    "properties": {
+                      "steps": { "type": ["number", "null"] },
+                      "calories": { "type": ["number", "null"] },
+                      "nutritionCalories": { "type": ["number", "null"] },
+                      "distance": { "type": ["number", "null"] },
+                      "restingHr": { "type": ["number", "null"] },
+                      "avgHr": { "type": ["number", "null"] },
+                      "maxHr": { "type": ["number", "null"] },
+                      "hrv": { "type": ["number", "null"] },
+                      "sleepHours": { "type": ["number", "null"] },
+                      "sleepAvgHr": { "type": ["number", "null"] },
+                      "weight": { "type": ["number", "null"] },
+                      "bodyFat": { "type": ["number", "null"] },
+                      "vo2Max": { "type": ["number", "null"] },
+                      "spo2": { "type": ["number", "null"] },
+                      "exerciseDuration": { "type": ["number", "null"] },
+                      "avgSpeed": { "type": ["number", "null"] },
+                      "avgPower": { "type": ["number", "null"] },
+                      "energyScore": { "type": ["number", "null"] },
+                      "bodyBattery": { "type": ["number", "null"] }
+                    },
+                    "additionalProperties": false
+                  },
                   "source": { "type": "string" },
                   "includeInMemory": { "type": "boolean" }
                 },
-                "required": ["date", "metrics"]
+                "required": ["date", "timeOfDay", "metrics"]
               }
             }
           }
